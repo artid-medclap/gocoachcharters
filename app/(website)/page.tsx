@@ -12,6 +12,7 @@ import { FaqSection } from "@/components/home/FaqSection";
 import { FinalCta } from "@/components/home/FinalCta";
 import { CommitmentSection } from "@/components/home/OurCommitment";
 import { WhyChooseCharter } from "@/components/home/WhyChooseCharter";
+import { SafetySection } from "@/components/home/SafetySection";
 
 export const metadata: Metadata = {
   title: "Charter Bus Rentals for Groups Across Alberta",
@@ -28,6 +29,7 @@ export default function HomePage() {
       <CommitmentSection />
       <WhyChooseCharter/>
       <ServicesSection />
+      <SafetySection />
       <FeaturedRoutes/>
       {/* <BookingSteps /> */}
       {/* <FleetShowcase /> */}

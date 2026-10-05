@@ -6,6 +6,7 @@ export const homeSections = {
   commitment: "/#commitment",
   whyGoCoach: "/#why-go-coach",
   services: "/#services",
+  safety: "/#safety",
   featuredRoutes: "/#featured-routes",
   amenities: "/#amenities",
   getStarted: "/#get-started",
@@ -36,6 +37,7 @@ export const footerExplore: NavItem[] = [
   { label: "Our Commitment", href: homeSections.commitment },
   { label: "Why Go Coach", href: homeSections.whyGoCoach },
   { label: "Who We Serve", href: homeSections.services },
+  { label: "Safety & Reliability", href: homeSections.safety },
   { label: "Featured Routes", href: homeSections.featuredRoutes },
   { label: "Onboard Amenities", href: homeSections.amenities },
 ];

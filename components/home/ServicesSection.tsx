@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
+  ArrowRight,
   ArrowUpRight,
   Briefcase,
   GraduationCap,
@@ -10,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { Container } from "@/components/shared/Container";
+import { homeSections } from "@/data/navigation";
 import { HomeSection } from "@/components/shared/HomeSection";
 import {
   SectionHeading,
@@ -25,6 +28,7 @@ import {
   premiumImageOverlay,
   premiumMediaAspect,
 } from "@/components/shared/premium-ui";
+
 const GROUPS = [
   {
     icon: Briefcase,
@@ -141,6 +145,35 @@ export function ServicesSection() {
               </article>
             );
           })}
+        </div>
+
+        <div
+          className={premiumCard(
+            "mx-auto mt-8 max-w-7xl px-7 py-8 sm:mt-10 sm:px-8 sm:py-8 lg:mt-12",
+            "light"
+          )}
+        >
+          <div className="flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:gap-8 sm:text-left">
+            <div className="max-w-xl">
+              <h3 className="text-xl font-bold tracking-[-0.02em] text-primary-950 sm:text-2xl">
+                Planning Group Trip
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-primary-950/55 sm:text-base sm:leading-7">
+                Share your trip details and get a transportation quote tailored
+                to your group.
+              </p>
+            </div>
+            <Link
+              href={homeSections.getStarted}
+              className="group inline-flex h-12 w-full shrink-0 items-center justify-center gap-2.5 rounded-full bg-primary-800 px-8 text-sm font-bold text-white shadow-[0_12px_32px_rgba(53,0,20,0.18)] transition-all hover:bg-primary-900 hover:shadow-[0_16px_40px_rgba(53,0,20,0.22)] sm:w-auto sm:min-w-[200px]"
+            >
+              Get a Quote
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </div>
+          <div className={premiumCardAccentBar} />
         </div>
       </Container>
     </HomeSection>

@@ -52,11 +52,11 @@ export function FeaturedRoutes() {
           eyebrow="We Serve Western Canada & Beyond"
           title={
             <>
-              Our Featured
-              <SectionTitleAccent>Charter Routes</SectionTitleAccent>
+             Charter Bus 
+              <SectionTitleAccent>Service Across Alberta</SectionTitleAccent>
             </>
           }
-          description="Reliable charter transportation connecting major cities, mountain destinations, regional hubs, and popular group travel destinations across Western Canada."
+          description="Go Coach Charters provides reliable charter bus transportation across Alberta and Western Canada for local trips, events, tours, and long-distance travel."
         />
 
         {/* Destination-style route grid */}

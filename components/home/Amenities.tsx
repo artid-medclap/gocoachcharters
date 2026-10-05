@@ -32,7 +32,7 @@ const ONBOARD_FEATURES: {
   },
   {
     icon: Bath,
-    title: "Restroom",
+    title: " Onboard Restroom",
     description: "Clean and convenient restroom onboard.",
   },
   {
