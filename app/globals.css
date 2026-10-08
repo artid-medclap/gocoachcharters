@@ -78,7 +78,8 @@
   --foreground: #242424;
 
   --surface: #ffffff;
-  --surface-muted: #f8f5f6;
+  --surface-blush: #fff7f9;
+  --surface-muted: #faf9fa;
 
   --border: #eadde2;
   --muted-foreground: #6b6266;
@@ -99,7 +100,8 @@
     --foreground: #242424;
 
     --surface: #ffffff;
-    --surface-muted: #f8f5f6;
+    --surface-blush: #fff7f9;
+    --surface-muted: #faf9fa;
 
     --border: #eadde2;
     --muted-foreground: #6b6266;
@@ -116,6 +118,7 @@
   --color-foreground: var(--foreground);
 
   --color-surface: var(--surface);
+  --color-surface-blush: var(--surface-blush);
   --color-surface-muted: var(--surface-muted);
 
   --color-border: var(--border);
@@ -214,45 +217,3 @@ body {
   }
 }
 
-/* =========================================================
-   3D FLIP CARD UTILITIES
-========================================================= */
-.flip-card {
-  perspective: 1800px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner,
-.flip-card:focus-within .flip-card-inner {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 30px;
-}
-
-.flip-card-front {
-  transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-}

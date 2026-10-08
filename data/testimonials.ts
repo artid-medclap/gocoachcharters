@@ -48,7 +48,7 @@ export const testimonials: Testimonial[] = [
     location: "Savannah, GA",
     rating: 5,
     quote:
-      "The multi-day tour package was fantastic value — hotels, guides, and transport all handled without a single hiccup.",
+      "The multi-day tour package was fantastic value: hotels, guides, and transport all handled without a single hiccup.",
     initials: "GT",
   },
 ];

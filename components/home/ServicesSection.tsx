@@ -1,181 +1,177 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Briefcase,
-  GraduationCap,
-  HeartHandshake,
-  Map,
-  Trophy,
-  Users,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/shared/Container";
-import { homeSections } from "@/data/navigation";
 import { HomeSection } from "@/components/shared/HomeSection";
 import {
   SectionHeading,
   SectionTitleAccent,
 } from "@/components/shared/SectionHeading";
-import {
-  premiumCard,
-  premiumCardAccentBar,
-  premiumCardBody,
-  premiumCardDescription,
-  premiumCardTitle,
-  premiumImageHover,
-  premiumImageOverlay,
-  premiumMediaAspect,
-} from "@/components/shared/premium-ui";
+import { homeSectionMeta } from "@/lib/home-sections";
+import { siteMedia } from "@/lib/site-media";
 
 const GROUPS = [
   {
-    icon: Briefcase,
-    image: "/services/corporate-travel.webp",
-    title: "Corporate Travel",
+    image: siteMedia.services.corporateGroups,
+    title: "Corporate & Conference Travel",
     description:
-      "Conferences, meetings, employee transportation, and company events.",
+      "Bring colleagues together for meetings, conferences, and company events without juggling separate rides.",
+    imageAlt: "Colleagues working together around a table",
   },
   {
-    icon: GraduationCap,
-    image: "/services/school-trips.webp",
-    title: "School Trips",
+    image: siteMedia.services.schoolGroups,
+    title: "School & Campus Journeys",
     description:
-      "Transportation for students, teachers, and educational groups.",
+      "Keep students and educators together for campus visits, learning days, and school events.",
+    imageAlt: "Students gathered in a classroom",
   },
   {
-    icon: Trophy,
-    image: "/services/sports-teams.webp",
-    title: "Sports Teams",
+    image: siteMedia.services.sportsHockey,
+    title: "Team & Tournament Travel",
     description:
-      "Travel to games, tournaments, and sporting events.",
+      "Get players, coaches, and their gear to the next game or tournament together.",
+    imageAlt: "Youth hockey players competing at a tournament in Edmonton",
   },
   {
-    icon: HeartHandshake,
-    image: "/services/weddings-events.webp",
-    title: "Weddings & Events",
+    image: siteMedia.services.eventGroups,
+    title: "Wedding & Event Shuttles",
     description:
-      "Keep guests moving between hotels, venues, and event locations.",
+      "Help guests travel between hotels, venues, and celebrations with one coordinated ride.",
+    imageAlt: "Guests celebrating together at an event",
   },
   {
-    icon: Map,
-    image: "/services/private-tours (1).webp",
-    title: "Private Tours",
+    image: siteMedia.services.charterCoach,
+    title: "Church & Community Outings",
     description:
-      "Group transportation for sightseeing and multi-day trips.",
+      "Make retreats, gatherings, and community outings easier to plan from pickup to return.",
+    imageAlt: "Charter coach ready for a group trip",
   },
   {
-    icon: Users,
-    image: "/services/corporate-travel.webp",
-    title: "Family Outings",
+    image: siteMedia.services.scenicTours,
+    title: "Scenic Day Trips & Tours",
     description:
-      "Reunions, celebrations, and day trips with room for the whole group.",
+      "Explore Alberta together on an easy-paced day trip planned around your group's itinerary.",
+    imageAlt: "A canoe on a clear mountain lake in the Canadian Rockies",
   },
 ];
 
+export const servicesSection = homeSectionMeta.services;
+
 export function ServicesSection() {
   return (
-    <HomeSection id="services" tone="blush" className="overflow-hidden">
-      <div className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-primary-200/20 blur-[100px]" />
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[480px] w-[480px] rounded-full bg-primary-200/12 blur-[110px]" />
-
+    <HomeSection
+      id={servicesSection.id}
+      sectionName={servicesSection.name}
+      tone="blush"
+      decorated
+      className="overflow-hidden"
+    >
       <Container className="relative">
         <SectionHeading
           align="center"
           wide
-          eyebrow="Who We Serve"
           title={
             <>
-              Transportation for
+              Charter Bus Services for
               <SectionTitleAccent>Every Kind of Group</SectionTitleAccent>
             </>
           }
-          description="From business travel and school trips to weddings, sporting events, private tours, and family outings, we keep your group moving comfortably together."
+          description="From everyday group outings to milestone events, find a charter service that brings everyone along for the journey."
         />
 
-        <div className="mx-auto mt-10 grid max-w-7xl items-stretch gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-16 lg:grid-cols-6 lg:gap-6">
-          {GROUPS.map((group, index) => {
-            const Icon = group.icon;
-            const number = String(index + 1).padStart(2, "0");
-
-            return (
-              <article
-                key={group.title}
-                className={premiumCard(
-                  "flex h-full flex-col overflow-hidden p-0 lg:col-span-2",
-                  "light"
-                )}
-              >
-                <div className={premiumMediaAspect}>
-                  <Image
-                    src={group.image}
-                    alt={group.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className={premiumImageHover}
-                  />
-                  <div className={premiumImageOverlay} />
-
-                  <span className="absolute left-4 top-4 text-[11px] font-bold tabular-nums text-white/90">
-                    {number}
-                  </span>
-
-                  <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition-all duration-300 group-hover:border-primary-200/50 group-hover:bg-primary-200 group-hover:text-primary-950">
-                    <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </div>
-
-                <div className={premiumCardBody}>
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-accent-50 text-primary-800 ring-1 ring-primary-200/45 transition-colors duration-300 group-hover:bg-primary-200 group-hover:text-primary-950">
-                      <Icon className="h-5 w-5" strokeWidth={1.8} />
-                    </span>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-800/70">
-                      Group transportation
-                    </p>
-                  </div>
-
-                  <h3 className={`mt-4 ${premiumCardTitle}`}>{group.title}</h3>
-
-                  <p className={premiumCardDescription}>{group.description}</p>
-                </div>
-
-                <div className={premiumCardAccentBar} />
-              </article>
-            );
-          })}
-        </div>
-
-        <div
-          className={premiumCard(
-            "mx-auto mt-8 max-w-7xl px-7 py-8 sm:mt-10 sm:px-8 sm:py-8 lg:mt-12",
-            "light"
-          )}
-        >
-          <div className="flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:gap-8 sm:text-left">
-            <div className="max-w-xl">
-              <h3 className="text-xl font-bold tracking-[-0.02em] text-primary-950 sm:text-2xl">
-                Planning Group Trip
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-primary-950/55 sm:text-base sm:leading-7">
-                Share your trip details and get a transportation quote tailored
-                to your group.
-              </p>
-            </div>
+        <div className="mx-auto mt-10 grid max-w-7xl items-stretch gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3">
+          {GROUPS.map((group) => (
             <Link
-              href={homeSections.getStarted}
-              className="group inline-flex h-12 w-full shrink-0 items-center justify-center gap-2.5 rounded-full bg-primary-800 px-8 text-sm font-bold text-white shadow-[0_12px_32px_rgba(53,0,20,0.18)] transition-all hover:bg-primary-900 hover:shadow-[0_16px_40px_rgba(53,0,20,0.22)] sm:w-auto sm:min-w-[200px]"
+              key={group.title}
+              href="/booking"
+              aria-label={`Explore ${group.title} charter services`}
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-[0_10px_30px_rgba(53,0,20,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_20px_42px_rgba(53,0,20,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-700"
             >
-              Get a Quote
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
-                <ArrowRight className="h-4 w-4" />
-              </span>
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-primary-50">
+                <Image
+                  src={group.image}
+                  alt={group.imageAlt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col items-center px-5 py-5 text-center sm:px-6 sm:py-6">
+                <h3 className="text-base font-bold uppercase leading-snug tracking-[0.06em] text-primary-950 transition-colors group-hover:text-primary-700 sm:text-lg">
+                  {group.title}
+                </h3>
+                <p className="mt-2 line-clamp-2 text-sm leading-6 text-primary-950/65">
+                  {group.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-800">
+                  Explore service
+                  <ArrowUpRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5"
+                    aria-hidden
+                  />
+                </span>
+              </div>
             </Link>
-          </div>
-          <div className={premiumCardAccentBar} />
+          ))}
         </div>
       </Container>
+      {/* Full-width Estimate CTA */}
+<section className="relative mt-16 w-full overflow-hidden sm:mt-20 lg:mt-24">
+  {/* Background image */}
+  <Image
+    src={siteMedia.commitment.servicesCtaBand}
+    alt=""
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-center brightness-[1.02] contrast-[1.03]"
+  />
+
+  {/* Burgundy tint: stronger on the left for copy, lighter on the right so the photo reads clearly */}
+  <div
+    aria-hidden
+    className="absolute inset-0 bg-gradient-to-r from-primary-950/82 via-primary-900/38 to-primary-950/10"
+  />
+  <div
+    aria-hidden
+    className="absolute inset-0 bg-gradient-to-t from-primary-950/35 via-transparent to-primary-950/15"
+  />
+
+  {/* CTA content */}
+  <Container className="relative">
+    <div className="flex min-h-[420px] flex-col items-center justify-center gap-8 py-16 text-center sm:min-h-[460px] sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:text-left">
+      
+      {/* Text */}
+      <div className="max-w-3xl">
+        <h2 className="text-3xl font-extrabold leading-tight tracking-[-0.035em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:text-4xl lg:text-5xl">
+          Get an Estimate for Your{" "}
+          <span className="text-primary-100">
+            Charter Bus Rental
+          </span>
+        </h2>
+
+        <p className="mt-5 max-w-2xl text-sm leading-7 text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)] sm:text-base sm:leading-8">
+          Enter your trip details to get an estimated charter bus rental
+          cost based on your travel distance, trip duration, and number of
+          buses.
+        </p>
+      </div>
+
+      {/* Button */}
+      <div className="shrink-0">
+        <button
+          type="button"
+          className="group inline-flex min-h-16 cursor-default items-center justify-center gap-4 rounded-full bg-white px-8 py-5 text-sm font-extrabold uppercase tracking-[0.05em] text-primary-900 shadow-[0_12px_35px_rgba(53,0,20,0.25)] sm:min-w-[340px] sm:px-10"
+        >
+          Calculate Bus Rental Cost
+          <ArrowUpRight className="h-5 w-5" aria-hidden />
+        </button>
+      </div>
+    </div>
+  </Container>
+</section>
     </HomeSection>
   );
 }

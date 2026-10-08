@@ -9,8 +9,8 @@ const baseStyles =
   "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
 const variantStyles: Record<Variant, string> = {
-  primary: "bg-primary-600 text-white shadow-[0_8px_24px_rgba(158,0,56,0.2)] hover:bg-primary-700",
-  secondary: "bg-primary-200 text-primary-950 hover:bg-primary-300",
+  primary: "bg-primary-100 text-primary-950 shadow-[0_8px_24px_rgba(158,0,56,0.08)] hover:bg-primary-200",
+  secondary: "bg-accent-50 text-primary-900 hover:bg-primary-100",
   outline: "border border-border text-foreground hover:bg-surface-muted",
   ghost: "text-foreground hover:bg-surface-muted",
 };

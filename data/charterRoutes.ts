@@ -1,3 +1,4 @@
+import { siteMedia } from "@/lib/site-media";
 import type { CharterRoute } from "@/types/charterRoute";
 
 export const charterRoutes: CharterRoute[] = [
@@ -9,12 +10,13 @@ export const charterRoutes: CharterRoute[] = [
     distance: "300 km",
     duration: "~3h",
     priceFrom: 899,
-    image: "/services/intercity.webp",
+    image: siteMedia.services.intercity,
     tag: "High-Demand Corridor",
     tripsCount: "380+ Trips / Year",
     passengerCount: "9,500+ Guests",
     featured: true,
-    description: "Premier QEII corridor for corporate groups, conferences, and airport shuttles.",
+    description:
+      "Premier QEII corridor for corporate groups, conferences, and airport shuttles.",
   },
   {
     id: "cr-2",
@@ -24,12 +26,13 @@ export const charterRoutes: CharterRoute[] = [
     distance: "410 km",
     duration: "~4h 15m",
     priceFrom: 1199,
-    image: "/services/private-tours.webp",
+    image: siteMedia.services.privateTours,
     tag: "Rocky Mountain Scenic",
     tripsCount: "220+ Trips / Year",
     passengerCount: "6,200+ Guests",
     featured: true,
-    description: "Scenic mountain highway through Canmore to Banff resorts and alpine retreats.",
+    description:
+      "Scenic mountain highway through Canmore to Banff resorts and alpine retreats.",
   },
   {
     id: "cr-3",
@@ -39,12 +42,13 @@ export const charterRoutes: CharterRoute[] = [
     distance: "130 km",
     duration: "~1h 30m",
     priceFrom: 649,
-    image: "/images/bus4.webp",
+    image: siteMedia.coaches.bus04,
     tag: "Fast Alpine Gateway",
     tripsCount: "440+ Trips / Year",
     passengerCount: "13,000+ Guests",
     featured: true,
-    description: "Fast, direct mountain corridor connecting Calgary to Banff hotels and venues.",
+    description:
+      "Fast, direct mountain corridor connecting Calgary to Banff hotels and venues.",
   },
   {
     id: "cr-4",
@@ -54,12 +58,13 @@ export const charterRoutes: CharterRoute[] = [
     distance: "185 km",
     duration: "~2h",
     priceFrom: 749,
-    image: "/services/charters.webp",
+    image: siteMedia.services.charters,
     tag: "UNESCO World Heritage",
     tripsCount: "260+ Trips / Year",
     passengerCount: "7,800+ Guests",
     featured: true,
-    description: "World-renowned alpine route to Lake Louise and Moraine Lake viewpoints.",
+    description:
+      "World-renowned alpine route to Lake Louise and Moraine Lake viewpoints.",
   },
   {
     id: "cr-5",
@@ -69,12 +74,13 @@ export const charterRoutes: CharterRoute[] = [
     distance: "365 km",
     duration: "~4h",
     priceFrom: 1099,
-    image: "/hero/commitment.webp",
+    image: siteMedia.home.commitmentFeature,
     tag: "National Park Expedition",
     tripsCount: "170+ Trips / Year",
     passengerCount: "4,600+ Guests",
     featured: true,
-    description: "Panoramic Yellowhead route through Jasper National Park for group tours.",
+    description:
+      "Panoramic Yellowhead route through Jasper National Park for group tours.",
   },
   {
     id: "cr-6",
@@ -84,12 +90,13 @@ export const charterRoutes: CharterRoute[] = [
     distance: "150 km",
     duration: "~1h 45m",
     priceFrom: 549,
-    image: "/services/sports.webp",
+    image: siteMedia.services.sports,
     tag: "Athletic & Events Link",
     tripsCount: "210+ Trips / Year",
     passengerCount: "5,300+ Guests",
     featured: true,
-    description: "Fast regional link for sports tournaments, school groups, and day events.",
+    description:
+      "Fast regional link for sports tournaments, school groups, and day events.",
   },
   {
     id: "cr-7",
@@ -99,7 +106,7 @@ export const charterRoutes: CharterRoute[] = [
     distance: "210 km",
     duration: "~2h 15m",
     priceFrom: 699,
-    image: "/services/corporate-travel.webp",
+    image: siteMedia.services.corporateTravel,
     tag: "Southern Alberta Hub",
     tripsCount: "140+ Trips / Year",
     passengerCount: "3,400+ Guests",
@@ -115,7 +122,7 @@ export const charterRoutes: CharterRoute[] = [
     distance: "295 km",
     duration: "~3h",
     priceFrom: 799,
-    image: "/services/weddings-events.webp",
+    image: siteMedia.services.weddingsEvents,
     tag: "Cross-Regional Charter",
     tripsCount: "95+ Trips / Year",
     passengerCount: "2,200+ Guests",
@@ -131,7 +138,7 @@ export const charterRoutes: CharterRoute[] = [
     distance: "460 km",
     duration: "~5h",
     priceFrom: 1299,
-    image: "/images/bus3.webp",
+    image: siteMedia.coaches.bus03,
     tag: "Northern Alberta Link",
     tripsCount: "110+ Trips / Year",
     passengerCount: "2,800+ Guests",
@@ -147,7 +154,7 @@ export const charterRoutes: CharterRoute[] = [
     distance: "440 km",
     duration: "~4h 30m",
     priceFrom: 1249,
-    image: "/services/intercity.webp",
+    image: siteMedia.services.intercity,
     tag: "Energy Corridor Route",
     tripsCount: "85+ Trips / Year",
     passengerCount: "2,100+ Guests",
@@ -159,27 +166,19 @@ export const charterRoutes: CharterRoute[] = [
 
 export const routeStats = [
   {
-    id: "stat-1",
-    value: "20+",
-    label: "Alberta Corridors",
-    description: "Regularly operated group routes",
+    label: "Groups served",
+    value: "1,000+",
   },
   {
-    id: "stat-2",
-    value: "1,600+",
-    label: "Trips Dispatched",
-    description: "Annual safe charters completed",
+    label: "Years in service",
+    value: "13+",
   },
   {
-    id: "stat-3",
-    value: "46,000+",
-    label: "Passengers Moved",
-    description: "Across corporate, school & tour groups",
+    label: "Alberta corridors",
+    value: "10+",
   },
   {
-    id: "stat-4",
-    value: "99.7%",
-    label: "On-Time Dispatch",
-    description: "Precision scheduling standard",
+    label: "Licensed & insured",
+    value: "100%",
   },
 ];

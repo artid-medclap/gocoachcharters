@@ -126,7 +126,11 @@ export function Navbar() {
             {contactPhone.label}
           </a>
 
-          <Button href={homeSections.getStarted} size="sm">
+          <Button
+            href={homeSections.getStarted}
+            size="sm"
+            className="bg-[#7c011e] text-white shadow-[0_8px_24px_rgba(124,1,30,0.2)] hover:bg-[#630018] focus-visible:ring-[#7c011e]"
+          >
             Get A Quote
           </Button>
         </div>

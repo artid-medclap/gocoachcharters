@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
-import { TrustBar } from "@/components/home/TrustBar";
-import { FleetShowcase } from "@/components/home/FleetShowcase";
+import { TrustedPartnersSection } from "@/components/home/TrustedPartnersSection";
+import { FleetShowcaseSection } from "@/components/home/FleetShowcaseSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
-import { BookingSteps } from "@/components/home/BookingSteps";
-import { Amenities } from "@/components/home/Amenities";
-import { FeaturedRoutes } from "@/components/home/FeaturedRoutes";
-import { Gallery } from "@/components/home/Gallery";
-import { CustomerReviews } from "@/components/home/CustomerReviews";
+import { BookingStepsSection } from "@/components/home/BookingStepsSection";
+import { AmenitiesSection } from "@/components/home/AmenitiesSection";
+import { FeaturedRoutesSection } from "@/components/home/FeaturedRoutesSection";
+import { GallerySection } from "@/components/home/GallerySection";
+import { CustomerReviewsSection } from "@/components/home/CustomerReviewsSection";
 import { FaqSection } from "@/components/home/FaqSection";
-import { FinalCta } from "@/components/home/FinalCta";
-import { CommitmentSection } from "@/components/home/OurCommitment";
-import { WhyChooseCharter } from "@/components/home/WhyChooseCharter";
+import { CommitmentSection } from "@/components/home/CommitmentSection";
+import { WhyChooseCharterSection } from "@/components/home/WhyChooseCharterSection";
 import { SafetySection } from "@/components/home/SafetySection";
 
 export const metadata: Metadata = {
@@ -23,21 +22,21 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <main className="flex flex-col bg-white">
       <HeroSection />
-      <TrustBar />
+      <TrustedPartnersSection />
       <CommitmentSection />
-      <WhyChooseCharter/>
+      {/* <WhyChooseCharterSection /> */}
       <ServicesSection />
-      <SafetySection />
-      <FeaturedRoutes/>
-      {/* <BookingSteps /> */}
-      {/* <FleetShowcase /> */}
-      <Amenities />
-      {/* <Gallery /> */}
-      {/* <CustomerReviews /> */}
+      <FleetShowcaseSection />
+
+      {/* <SafetySection /> */}
+      {/* <BookingStepsSection /> */}
+      <AmenitiesSection />
+      <FeaturedRoutesSection />
+      <CustomerReviewsSection />
+      {/* <GallerySection /> */}
       {/* <FaqSection /> */}
-      <FinalCta />
-    </>
+    </main>
   );
 }

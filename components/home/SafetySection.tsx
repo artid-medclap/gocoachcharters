@@ -12,13 +12,14 @@ import {
   SectionHeading,
   SectionTitleAccent,
 } from "@/components/shared/SectionHeading";
+import { homeSectionMeta } from "@/lib/home-sections";
 import {
-  premiumCard,
-  premiumCardAccentBar,
-  premiumCardBody,
-  premiumCardDescription,
-  premiumCardTitle,
-} from "@/components/shared/premium-ui";
+  sectionCard,
+  sectionCardAccentBar,
+  sectionCardBody,
+  sectionCardDescription,
+  sectionCardTitle,
+} from "@/components/shared/home-section-cards";
 
 const SAFETY_PILLARS: {
   icon: LucideIcon;
@@ -51,9 +52,16 @@ const SAFETY_PILLARS: {
   },
 ];
 
+export const safetySection = homeSectionMeta.safety;
+
 export function SafetySection() {
   return (
-    <HomeSection id="safety" tone="white" className="overflow-hidden">
+    <HomeSection
+      id={safetySection.id}
+      sectionName={safetySection.name}
+      tone="blush"
+      className="overflow-hidden"
+    >
       <div className="pointer-events-none absolute -left-40 top-16 h-[400px] w-[400px] rounded-full bg-primary-200/15 blur-[100px]" />
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-primary-200/10 blur-[110px]" />
 
@@ -61,26 +69,25 @@ export function SafetySection() {
         <SectionHeading
           align="center"
           wide
-          eyebrow="Built for Trust"
           title={
             <>
               Safety & Reliability
               <SectionTitleAccent>Behind Every Trip</SectionTitleAccent>
             </>
           }
-          description="Licensed operations, maintained coaches, experienced drivers, and responsive support — so your group can focus on the journey."
+          description="Licensed operations, maintained coaches, experienced drivers, and responsive support, so your group can focus on the journey."
         />
 
         <div className="mx-auto mt-10 grid max-w-6xl items-stretch gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-16 lg:gap-6">
           {SAFETY_PILLARS.map(({ icon: Icon, title, description }, index) => (
             <article
               key={title}
-              className={premiumCard(
+              className={sectionCard(
                 "flex h-full flex-col overflow-hidden p-0",
                 "light"
               )}
             >
-              <div className={premiumCardBody}>
+              <div className={sectionCardBody}>
                 <div className="flex items-start justify-between gap-3">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent-50 text-primary-800 ring-1 ring-primary-200/45 transition-colors duration-300 group-hover:bg-primary-200 group-hover:text-primary-950">
                     <Icon className="h-5 w-5" strokeWidth={1.8} />
@@ -90,10 +97,10 @@ export function SafetySection() {
                   </span>
                 </div>
 
-                <h3 className={`mt-5 ${premiumCardTitle}`}>{title}</h3>
-                <p className={premiumCardDescription}>{description}</p>
+                <h3 className={`mt-5 ${sectionCardTitle}`}>{title}</h3>
+                <p className={sectionCardDescription}>{description}</p>
               </div>
-              <div className={premiumCardAccentBar} />
+              <div className={sectionCardAccentBar} />
             </article>
           ))}
         </div>

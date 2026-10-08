@@ -1,6 +1,6 @@
 import type { NavItem } from "@/types/common";
 
-/** In-page section links (homepage only — no separate routes for now) */
+/** In-page section links (homepage only; no separate routes for now) */
 export const homeSections = {
   top: "/#top",
   commitment: "/#commitment",
@@ -9,6 +9,7 @@ export const homeSections = {
   safety: "/#safety",
   featuredRoutes: "/#featured-routes",
   amenities: "/#amenities",
+  reviews: "/#reviews",
   getStarted: "/#get-started",
 } as const;
 
@@ -27,7 +28,7 @@ export const mainNav: NavItem[] = [
   },
   { label: "About Us", href: homeSections.commitment },
   { label: "Gallery", href: homeSections.services },
-  { label: "Reviews", href: homeSections.whyGoCoach },
+  { label: "Reviews", href: homeSections.reviews },
   { label: "Blog", href: homeSections.commitment },
   { label: "FAQ", href: homeSections.amenities },
 ];

@@ -70,7 +70,7 @@ export function BookingWidget() {
             className={cn(
               "rounded-full px-4 py-1.5 text-sm font-semibold transition-colors",
               tripType === type.value
-                ? "bg-primary-600 text-white"
+                ? "bg-primary-100 text-primary-950"
                 : "bg-surface-muted text-muted-foreground hover:text-foreground"
             )}
           >

@@ -13,7 +13,20 @@ interface SectionHeadingProps {
   headingClassName?: string;
   /** Wider headline block for centered sections */
   wide?: boolean;
+  /** Default for page sections; compact for trust bar / secondary bands */
+  size?: "default" | "compact";
 }
+
+/** Shared body copy below section titles */
+export const sectionBodyTextClass =
+  "text-base leading-7 text-primary-950/55 sm:text-lg sm:leading-8";
+
+const titleSizeClass = {
+  default:
+    "text-balance text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl lg:text-5xl",
+  compact:
+    "text-balance text-xl font-extrabold tracking-[-0.03em] sm:text-2xl lg:text-3xl",
+} as const;
 
 export function SectionHeading({
   eyebrow,
@@ -25,6 +38,7 @@ export function SectionHeading({
   className,
   headingClassName,
   wide = false,
+  size = "default",
 }: SectionHeadingProps) {
   const isInverted = tone === "inverted";
   const isCenter = align === "center";
@@ -66,10 +80,10 @@ export function SectionHeading({
   const titleEl = (
     <h2
       className={cn(
-        "font-bold leading-[1.14] tracking-[-0.028em] sm:leading-[1.12] lg:leading-[1.1]",
+        "leading-[1.12] sm:leading-[1.1] lg:leading-[1.08]",
         eyebrow ? "mt-7 sm:mt-8" : "mt-0",
         isInverted ? "text-white" : "text-primary-950",
-        "text-balance text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] xl:text-6xl",
+        titleSizeClass[size],
         isCenter && "mx-auto",
         wide ? "max-w-4xl" : "max-w-3xl",
         !isCenter && "max-w-none",
@@ -95,9 +109,9 @@ export function SectionHeading({
   const descriptionEl = description ? (
     <p
       className={cn(
-        "text-base leading-7 sm:text-lg sm:leading-8",
-        accentLine ? "mt-6 sm:mt-7" : "mt-6 sm:mt-7",
-        isInverted ? "text-white/60" : "text-primary-950/55",
+        sectionBodyTextClass,
+        accentLine ? "mt-5 sm:mt-6" : "mt-5 sm:mt-6",
+        isInverted ? "!text-white/75" : undefined,
         isCenter && "mx-auto max-w-2xl",
         isSplit && "max-w-md lg:mt-0",
         !isCenter && !isSplit && "max-w-xl"
@@ -154,7 +168,7 @@ export function SectionTitleAccent({
     <span
       className={cn(
         "mt-2 block sm:mt-2.5",
-        inverted ? "text-primary-200" : "text-primary-700",
+        inverted ? "text-primary-200" : "text-primary-900",
         className
       )}
     >

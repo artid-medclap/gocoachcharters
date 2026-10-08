@@ -6,16 +6,23 @@ import { Plus, Sparkles } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { cn } from "@/lib/utils";
 import { faqs } from "@/data/faqs";
+import { homeSectionMeta } from "@/lib/home-sections";
+
+export const faqSection = homeSectionMeta.faq;
 
 export function FaqSection() {
   const [openId, setOpenId] = useState<string | null>(faqs[0]?.id ?? null);
 
   return (
-    <section className="relative overflow-hidden bg-[#fff8fa] py-20 sm:py-24 lg:py-28">
+    <section
+      id={faqSection.id}
+      aria-label={faqSection.name}
+      className="relative overflow-hidden bg-surface-blush py-20 sm:py-24 lg:py-28"
+    >
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-[#f2b3c7]/10 blur-[120px]" />
-        <div className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-[#f2b3c7]/10 blur-[120px]" />
+        <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-primary-100/10 blur-[120px]" />
+        <div className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-primary-100/10 blur-[120px]" />
       </div>
 
       <Container className="relative">
@@ -23,7 +30,7 @@ export function FaqSection() {
         <div className="flex flex-col items-center text-center">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 rounded-full border border-[#f2b3c7]/50 bg-white px-4 py-2 shadow-sm">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#f2b3c7]/30">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary-100">
               <Sparkles className="h-3.5 w-3.5 text-primary-900" />
             </span>
 
@@ -58,8 +65,8 @@ export function FaqSection() {
                 className={cn(
                   "group overflow-hidden rounded-[24px] border bg-white transition-all duration-300",
                   isOpen
-                    ? "border-[#e8ccd5] shadow-[0_15px_45px_rgba(91,49,65,0.07)]"
-                    : "border-primary-200/60 shadow-[0_8px_30px_rgba(31,20,27,0.035)] hover:border-[#f2b3c7]/70"
+                  ? "border-primary-100 bg-white shadow-[0_15px_45px_rgba(91,49,65,0.05)]"
+                  : "border-primary-100 shadow-[0_8px_30px_rgba(31,20,27,0.03)] hover:border-primary-200"
                 )}
               >
                 <button
@@ -74,8 +81,8 @@ export function FaqSection() {
                     className={cn(
                       "flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-300",
                       isOpen
-                        ? "bg-[#f2b3c7] text-primary-950"
-                        : "bg-[#fff1f5] text-primary-800 group-hover:bg-[#f2b3c7]/40"
+                        ? "bg-primary-100 text-primary-950"
+                        : "bg-primary-50 text-primary-800 group-hover:bg-primary-100"
                     )}
                   >
                     {String(index + 1).padStart(2, "0")}
@@ -96,8 +103,8 @@ export function FaqSection() {
                     className={cn(
                       "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
                       isOpen
-                        ? "border-primary-900 bg-primary-900 text-white"
-                        : "border-primary-200 bg-[#fff8fa] text-primary-800 group-hover:border-[#f2b3c7]"
+                        ? "border-primary-200 bg-primary-100 text-primary-900"
+                        : "border-primary-100 bg-surface-blush text-primary-800 group-hover:border-primary-200"
                     )}
                   >
                     <Plus

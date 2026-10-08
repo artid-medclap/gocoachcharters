@@ -11,7 +11,6 @@ export function RoutesSection() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
-            eyebrow="Popular routes"
             title="Charter routes across Alberta"
             description="From city corridors to mountain destinations, these are the trips groups book most."
           />

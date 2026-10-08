@@ -5,13 +5,13 @@ export const faqs: FaqItem[] = [
     id: "faq-1",
     question: "How far in advance should I book a charter bus?",
     answer:
-      "We recommend booking 2-4 weeks ahead for most trips, and 2-3 months ahead for weddings, tournaments, or peak-season travel. Last-minute requests are welcome — we'll always try to accommodate your dates.",
+      "We recommend booking 2-4 weeks ahead for most trips, and 2-3 months ahead for weddings, tournaments, or peak-season travel. Last-minute requests are welcome. We'll always try to accommodate your dates.",
   },
   {
     id: "faq-2",
     question: "What is the minimum group size for a charter?",
     answer:
-      "There's no strict minimum — we have vehicles starting at 18 seats, so smaller groups can still book a private charter instead of splitting into cars.",
+      "There's no strict minimum. We have vehicles starting at 18 seats, so smaller groups can still book a private charter instead of splitting into cars.",
   },
   {
     id: "faq-3",
@@ -35,7 +35,7 @@ export const faqs: FaqItem[] = [
     id: "faq-6",
     question: "Can we make multiple stops during our trip?",
     answer:
-      "Absolutely. Charters are built around your itinerary — tell us your stops and timing when you request a quote and we'll build the route around it.",
+      "Absolutely. Charters are built around your itinerary. Tell us your stops and timing when you request a quote and we'll build the route around it.",
   },
   {
     id: "faq-7",

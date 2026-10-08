@@ -74,7 +74,11 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {contactPhone.label}
         </a>
 
-        <Button href={homeSections.getStarted} className="mt-2 w-full" onClick={onClose}>
+        <Button
+          href={homeSections.getStarted}
+          className="mt-2 w-full bg-[#7c011e] text-white shadow-[0_8px_24px_rgba(124,1,30,0.2)] hover:bg-[#630018] focus-visible:ring-[#7c011e]"
+          onClick={onClose}
+        >
           Get A Quote
         </Button>
       </nav>

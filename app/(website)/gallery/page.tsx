@@ -39,20 +39,20 @@ export default function GalleryPage() {
   }, [activeCategory]);
 
   return (
-    <main className="min-h-screen bg-[#faf8f7] pt-12 pb-24">
+    <main className="min-h-screen bg-surface-blush pt-12 pb-24">
       {/* =========================================================
           HERO BANNER
       ========================================================= */}
       <section className="relative overflow-hidden py-12 sm:py-16">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#f2b3c7]/20 blur-[130px]" />
-          <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#f2b3c7]/20 blur-[130px]" />
+          <div className="absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-primary-100/20 blur-[130px]" />
+          <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-primary-100/20 blur-[130px]" />
         </div>
 
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#f2b3c7]/60 bg-white px-4 py-2 shadow-sm">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#f2b3c7]/30">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary-100">
                 <Sparkles className="h-3.5 w-3.5 text-primary-900" />
               </span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary-900">
@@ -91,7 +91,7 @@ export default function GalleryPage() {
                     transition-all duration-200
                     ${
                       isActive
-                        ? "bg-primary-800 text-white shadow-md shadow-primary-900/20"
+                        ? "bg-primary-100 text-primary-950 shadow-md shadow-primary-900/10"
                         : "border border-primary-200/60 bg-white text-primary-950/70 hover:border-primary-400 hover:text-primary-950"
                     }
                   `}
@@ -200,7 +200,7 @@ export default function GalleryPage() {
               <button
                 type="button"
                 onClick={() => setActiveCategory("All")}
-                className="mt-4 rounded-full bg-primary-800 px-6 py-2.5 text-sm font-semibold text-white"
+                className="mt-4 rounded-full bg-primary-100 px-6 py-2.5 text-sm font-semibold text-primary-950 transition-colors hover:bg-primary-200"
               >
                 Reset filter
               </button>
@@ -228,7 +228,7 @@ export default function GalleryPage() {
               <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
                 <Link
                   href="/booking"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary-800 px-7 text-sm font-bold text-white transition-all hover:bg-primary-900 shadow-md"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary-100 px-7 text-sm font-bold text-primary-950 shadow-md transition-all hover:bg-primary-200"
                 >
                   <span>Request a Free Quote</span>
                   <ArrowRight className="h-4 w-4" />
@@ -306,7 +306,7 @@ export default function GalleryPage() {
                 <div className="flex w-full items-center gap-3 sm:w-auto">
                   <Link
                     href="/booking"
-                    className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary-800 px-6 text-sm font-bold text-white transition-colors hover:bg-primary-900"
+                    className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary-100 px-6 text-sm font-bold text-primary-950 transition-colors hover:bg-primary-200"
                   >
                     <span>Book This Charter</span>
                     <ArrowRight className="h-4 w-4" />

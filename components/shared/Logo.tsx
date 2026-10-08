@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { siteMedia } from "@/lib/site-media";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -17,7 +18,7 @@ export function Logo({ className, inverted = false }: LogoProps) {
       )}
     >
       <Image
-        src="/hero/new-logo-go-coach-charters.webp"
+        src={siteMedia.brand.logo}
         height={200}
         width={200}
         alt="GoCoach Charters"
