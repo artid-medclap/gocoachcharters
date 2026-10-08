@@ -35,3 +35,16 @@ export const FOOTER_SOCIAL: { platform: SocialPlatform; label: string }[] = [
   { platform: "linkedin", label: "LinkedIn" },
   { platform: "youtube", label: "YouTube" },
 ];
+
+/** Primary CTA — default darker burgundy; hover brand #7a011f (simple color swap). */
+export const primaryButtonClass =
+  "inline-flex items-center justify-center gap-2 rounded-full bg-[#610018] font-bold text-white shadow-sm transition-colors duration-200 hover:bg-[#7a011f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a011f] disabled:pointer-events-none disabled:opacity-50";
+
+/** Frosted glass surface used on the hero trust bar (use over a dark backdrop). */
+export const frostedTrustSurfaceClass =
+  "border-white/35 bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-white/12";
+
+/** Same frosted treatment on light pink (footer, blush sections). */
+export const frostedTrustSurfaceLightClass =
+  "border-primary-100/90 bg-white/45 shadow-[0_8px_32px_rgba(122,1,31,0.08)] backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-white/55";
+

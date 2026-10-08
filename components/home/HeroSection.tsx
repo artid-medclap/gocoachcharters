@@ -4,9 +4,11 @@ import { CalendarCheck, ShieldCheck, UserRoundCheck, UsersRound } from "lucide-r
 
 import { Container } from "@/components/shared/Container";
 import { homeSections } from "@/data/navigation";
+import { frostedTrustSurfaceClass, primaryButtonClass } from "@/lib/constants";
 import { homeSectionMeta } from "@/lib/home-sections";
 import { siteMedia } from "@/lib/site-media";
 import { heroTitleClass } from "@/lib/typography";
+import { cn } from "@/lib/utils";
 
 export const heroSection = homeSectionMeta.hero;
 
@@ -20,8 +22,7 @@ const assurances = [
 const assuranceIconClass =
   "flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-primary-200/90 bg-white text-primary-900 shadow-sm sm:h-12 sm:w-12 sm:rounded-2xl";
 
-const assuranceBarClass =
-  "w-full rounded-2xl border border-white/35 bg-white/10 px-4 py-5 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-md backdrop-saturate-150 sm:rounded-3xl sm:px-6 sm:py-6 supports-[backdrop-filter]:bg-white/12";
+const assuranceBarClass = `w-full rounded-2xl border px-4 py-5 sm:rounded-3xl sm:px-6 sm:py-6 ${frostedTrustSurfaceClass}`;
 
 const assuranceTextClass =
   "!text-sm font-medium leading-snug !text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:!text-[0.9375rem]";
@@ -59,7 +60,7 @@ export function HeroSection() {
           <div className="flex w-full justify-center">
             <Link
               href={homeSections.getStarted}
-              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-primary-900 px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(122,1,31,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-800 hover:shadow-[0_16px_36px_rgba(122,1,31,0.34)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
+              className={cn("group min-h-12 gap-3 px-6 py-3 text-sm", primaryButtonClass)}
             >
               <Image
                 src={siteMedia.brand.busIconWhite}

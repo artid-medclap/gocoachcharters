@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { TrustedPartnersSection } from "@/components/home/TrustedPartnersSection";
 import { FleetShowcaseSection } from "@/components/home/FleetShowcaseSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { ServicesEstimateCtaSection } from "@/components/home/ServicesEstimateCtaSection";
 import { BookingStepsSection } from "@/components/home/BookingStepsSection";
 import { AmenitiesSection } from "@/components/home/AmenitiesSection";
 import { FeaturedRoutesSection } from "@/components/home/FeaturedRoutesSection";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <CommitmentSection />
       {/* <WhyChooseCharterSection /> */}
       <ServicesSection />
+      <ServicesEstimateCtaSection />
       <FleetShowcaseSection />
 
       {/* <SafetySection /> */}

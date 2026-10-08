@@ -17,7 +17,9 @@ import {
 
 import { Container } from "@/components/shared/Container";
 import { allGalleryItems } from "@/data/gallery";
+import { primaryButtonClass } from "@/lib/constants";
 import { bodyTextClass, bodyTextSmClass } from "@/lib/typography";
+import { cn } from "@/lib/utils";
 import type { GalleryItem } from "@/types/gallery";
 
 const CATEGORIES = [
@@ -229,14 +231,14 @@ export default function GalleryPage() {
               <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
                 <Link
                   href="/booking"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary-100 px-7 text-sm font-bold text-primary-950 shadow-md transition-all hover:bg-primary-200"
+                  className={cn("h-12 gap-2 px-7 text-sm", primaryButtonClass)}
                 >
                   <span>Request a Free Quote</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
                   href="tel:+17802383866"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-primary-200 bg-white px-7 text-sm font-bold text-primary-950 transition-colors hover:bg-primary-50"
+                  className={cn("h-12 gap-2 px-7 text-sm", primaryButtonClass)}
                 >
                   <Phone className="h-4 w-4 text-primary-800" />
                   <span>Call +1 (780) 238-3866</span>
@@ -307,7 +309,7 @@ export default function GalleryPage() {
                 <div className="flex w-full items-center gap-3 sm:w-auto">
                   <Link
                     href="/booking"
-                    className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary-100 px-6 text-sm font-bold text-primary-950 transition-colors hover:bg-primary-200"
+                    className={cn("h-11 gap-2 px-6 text-sm", primaryButtonClass)}
                   >
                     <span>Book This Charter</span>
                     <ArrowRight className="h-4 w-4" />

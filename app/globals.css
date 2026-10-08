@@ -194,6 +194,15 @@ body {
   will-change: transform;
 }
 
+.animate-amenities-marquee {
+  animation: trust-marquee 45s linear infinite;
+  will-change: transform;
+}
+
+.amenities-marquee:hover .animate-amenities-marquee {
+  animation-play-state: paused;
+}
+
 @keyframes gallery-marquee-left {
   from {
     transform: translateX(0);
@@ -233,6 +242,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-trust-marquee,
+  .animate-amenities-marquee,
   .animate-gallery-left,
   .animate-gallery-right {
     animation-play-state: paused;

@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { primaryButtonClass } from "@/lib/constants";
 import { homeSectionMeta } from "@/lib/home-sections";
+import { cn } from "@/lib/utils";
 import { siteMedia } from "@/lib/site-media";
 import { sectionTitleInvertedClass } from "@/lib/typography";
 

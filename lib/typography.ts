@@ -11,7 +11,7 @@ export const bodyTextSmClass =
 export const sectionTitleClass = cn(
   "text-balance font-semibold tracking-[-0.03em]",
   "text-3xl sm:text-4xl lg:text-5xl",
-  "leading-[1.12] sm:leading-[1.1] lg:leading-[1.08]"
+  "leading-[1.1] sm:leading-[1.08] lg:leading-[1.06]"
 );
 
 /** Trust bar & secondary band titles */
@@ -34,8 +34,11 @@ export const heroTitleClass = cn(
   "text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]"
 );
 
-/** Second line under section titles */
-export const sectionTitleAccentClass = "mt-2 block sm:mt-2.5";
+/** Stacked lines inside an h2 (consistent vertical rhythm) */
+export const sectionTitleStackClass = "flex flex-col gap-1 sm:gap-1.5";
+
+/** Accent line in a section title — no extra top margin (use stack gap instead) */
+export const sectionTitleAccentClass = "block mt-0";
 
 export const sectionTitleAccentOnDarkClass = "text-primary-200";
 

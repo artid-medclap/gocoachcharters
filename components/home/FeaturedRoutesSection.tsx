@@ -9,7 +9,9 @@ import {
 } from "@/components/shared/SectionHeading";
 import { homeSections } from "@/data/navigation";
 import { charterRoutes } from "@/data/charterRoutes";
+import { primaryButtonClass } from "@/lib/constants";
 import { homeSectionMeta } from "@/lib/home-sections";
+import { cn } from "@/lib/utils";
 
 const LOCATIONS = [
   { name: "Grande Prairie", latitude: 55.1707, longitude: -118.7887 },
@@ -111,7 +113,7 @@ export function FeaturedRoutesSection() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href={homeSections.getStarted}
-                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary-900 px-6 text-sm font-bold text-white shadow-[0_12px_30px_rgba(88,0,33,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700"
+                className={cn("group min-h-12 gap-2 px-6 text-sm", primaryButtonClass)}
               >
                 Get a free quote
 
@@ -123,16 +125,8 @@ export function FeaturedRoutesSection() {
             </div>
           </div>
 
-          {/* MAP CARD */}
-          <div className="relative isolate overflow-hidden rounded-[28px] border border-primary-100 bg-surface-blush p-1.5 shadow-[0_24px_72px_rgba(53,0,20,0.1)] sm:p-2">
-            <div
-              className="pointer-events-none absolute inset-0 opacity-30 [background-image:radial-gradient(rgb(88_0_33/0.35)_0.6px,transparent_0.6px)] [background-size:20px_20px]"
-              aria-hidden="true"
-            />
-
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-[760px] overflow-hidden rounded-[24px] sm:rounded-[28px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-white via-[#fffafb] to-[#f8edf0]" />
-
+          {/* MAP */}
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-[760px]">
               <svg
                 className="absolute inset-0 h-full w-full"
                 viewBox="0 0 700 525"
@@ -330,7 +324,6 @@ export function FeaturedRoutesSection() {
                   </Link>
                 ))}
               </nav>
-            </div>
           </div>
         </div>
 

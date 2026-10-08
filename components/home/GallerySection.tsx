@@ -15,6 +15,7 @@ import {
   sectionTitleClass,
   sectionTitleEmphasisClass,
 } from "@/lib/typography";
+import { primaryButtonClass } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export const gallerySection = homeSectionMeta.gallery;
@@ -250,15 +251,10 @@ export function GallerySection() {
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <Link
             href="/gallery"
-            className="
-              group inline-flex items-center gap-3.5
-              rounded-full bg-primary-100 px-8 py-4
-              text-sm sm:text-base font-bold text-primary-950
-              shadow-lg shadow-primary-900/10
-              transition-all duration-300
-              hover:bg-primary-200 hover:shadow-xl hover:shadow-primary-900/15
-              hover:-translate-y-0.5 active:translate-y-0
-            "
+            className={cn(
+              "group gap-3.5 px-8 py-4 text-sm sm:text-base",
+              primaryButtonClass
+            )}
           >
             <Camera className="h-4 w-4 opacity-80" />
             <span>View More Gallery</span>
@@ -357,11 +353,7 @@ export function GallerySection() {
                   <Link
                     href="/gallery"
                     onClick={() => setSelectedItem(null)}
-                    className="
-                      inline-flex h-11 items-center justify-center gap-2
-                      rounded-full bg-primary-100 px-6 text-sm font-bold text-primary-950
-                      transition-colors hover:bg-primary-200
-                    "
+                    className={cn("h-11 gap-2 px-6 text-sm", primaryButtonClass)}
                   >
                     <span>View More Gallery</span>
                     <ArrowUpRight className="h-4 w-4" />

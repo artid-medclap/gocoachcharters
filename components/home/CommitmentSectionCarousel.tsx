@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Play, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { Badge } from "@/components/shared/Badge";
 import { siteMedia } from "@/lib/site-media";
 import { cn } from "@/lib/utils";
 
@@ -100,11 +101,22 @@ export function CommitmentSectionCarousel() {
         onEnded={stopVideo}
       />
 
+      <div
+        className="pointer-events-none absolute right-3 top-3 z-20 flex flex-col items-end gap-2 sm:right-4 sm:top-4"
+      >
+        <Badge
+          tone="neutral"
+          className="border border-white/40 bg-white/90 px-4 py-2 text-sm font-semibold text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:px-5 sm:py-2.5 sm:text-base"
+        >
+          A demo video
+        </Badge>
+      </div>
+
       {isPlaying ? (
         <button
           type="button"
           onClick={stopVideo}
-          className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-primary-950/70 text-white backdrop-blur-sm transition-colors hover:bg-primary-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="absolute right-3 top-[3.75rem] z-20 flex h-10 w-10 items-center justify-center rounded-full bg-primary-950/70 text-white backdrop-blur-sm transition-colors hover:bg-primary-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-4 sm:top-[4.25rem]"
           aria-label="Close video"
         >
           <X className="h-5 w-5" aria-hidden />

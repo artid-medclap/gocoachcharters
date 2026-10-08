@@ -1,19 +1,13 @@
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import { primaryButtonClass } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 type Variant = "primary" | "secondary" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
 
-const baseStyles =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
-
-const variantStyles: Record<Variant, string> = {
-  primary: "bg-primary-100 text-primary-950 shadow-[0_8px_24px_rgba(158,0,56,0.08)] hover:bg-primary-200",
-  secondary: "bg-accent-50 text-primary-900 hover:bg-primary-100",
-  outline: "border border-border text-foreground hover:bg-surface-muted",
-  ghost: "text-foreground hover:bg-surface-muted",
-};
+const ghostStyles =
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold text-primary-900 transition-colors hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
 const sizeStyles: Record<Size, string> = {
   sm: "h-9 px-4 text-sm",
@@ -27,13 +21,25 @@ interface BaseProps {
   className?: string;
 }
 
-type ButtonAsButton = BaseProps & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
-type ButtonAsLink = BaseProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+type ButtonAsButton = BaseProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
+type ButtonAsLink = BaseProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-export function Button({ variant = "primary", size = "md", className, children, ...props }: ButtonProps) {
-  const classes = cn(baseStyles, variantStyles[variant], sizeStyles[size], className);
+export function Button({
+  variant = "primary",
+  size = "md",
+  className,
+  children,
+  ...props
+}: ButtonProps) {
+  const classes = cn(
+    variant === "ghost" ? ghostStyles : primaryButtonClass,
+    sizeStyles[size],
+    className
+  );
 
   if (props.href) {
     const { href, ...rest } = props as Omit<ButtonAsLink, keyof BaseProps>;
@@ -45,7 +51,10 @@ export function Button({ variant = "primary", size = "md", className, children, 
   }
 
   return (
-    <button className={classes} {...(props as Omit<ButtonAsButton, keyof BaseProps>)}>
+    <button
+      className={classes}
+      {...(props as Omit<ButtonAsButton, keyof BaseProps>)}
+    >
       {children}
     </button>
   );

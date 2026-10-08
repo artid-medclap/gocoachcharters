@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { Badge } from "@/components/shared/Badge";
 import { Container } from "@/components/shared/Container";
 import { HomeSection } from "@/components/shared/HomeSection";
 import {
@@ -10,49 +11,53 @@ import {
 } from "@/components/shared/SectionHeading";
 import { homeSectionMeta } from "@/lib/home-sections";
 import { siteMedia } from "@/lib/site-media";
-import { sectionCardTitleClass, sectionTitleInvertedClass } from "@/lib/typography";
+import { sectionCardTitleClass, sectionTitleStackClass } from "@/lib/typography";
+import { cn } from "@/lib/utils";
+
+/** Shared label style for service card image badges and “Explore services” links */
+const exploreServicesTextClass = "text-sm font-semibold text-primary-800";
 
 const GROUPS = [
   {
     image: siteMedia.services.corporateGroups,
-    title: "Corporate & Conference Travel",
+    title: "Corporate Travel",
     description:
-      "Bring colleagues together for meetings, conferences, and company events without juggling separate rides.",
+      "Conferences, meetings, employee transportation, and corporate events. Keep your guests and team on schedule with Go Coach Charters.",
     imageAlt: "Colleagues working together around a table",
   },
   {
     image: siteMedia.services.schoolGroups,
-    title: "School & Campus Journeys",
+    title: "School and College Trips",
     description:
-      "Keep students and educators together for campus visits, learning days, and school events.",
+      "Safe, on-time transportation for field trips, class excursions, university events, and school tournaments.",
     imageAlt: "Students gathered in a classroom",
   },
   {
     image: siteMedia.services.sportsHockey,
-    title: "Team & Tournament Travel",
+    title: "Sports Teams",
     description:
-      "Get players, coaches, and their gear to the next game or tournament together.",
+      "Travel to games, tournaments, and sporting events. Dedicated luggage storage provides space for sports equipment and personal bags.",
     imageAlt: "Youth hockey players competing at a tournament in Edmonton",
   },
   {
     image: siteMedia.services.eventGroups,
-    title: "Wedding & Event Shuttles",
+    title: "Weddings & Events",
     description:
-      "Help guests travel between hotels, venues, and celebrations with one coordinated ride.",
+      "Guest transportation for weddings, festivals, concerts, and private events, helping everyone arrive together safely and comfortably.",
     imageAlt: "Guests celebrating together at an event",
   },
   {
     image: siteMedia.services.charterCoach,
-    title: "Church & Community Outings",
+    title: "Church & Religious Groups",
     description:
-      "Make retreats, gatherings, and community outings easier to plan from pickup to return.",
+      "Charter bus transportation for church groups, pilgrimages, and faith-based events, with comfortable travel for groups of all sizes.",
     imageAlt: "Charter coach ready for a group trip",
   },
   {
     image: siteMedia.services.scenicTours,
-    title: "Scenic Day Trips & Tours",
+    title: "Senior Group Tour",
     description:
-      "Explore Alberta together on an easy-paced day trip planned around your group's itinerary.",
+      "Comfortable charter bus transportation for senior clubs, community groups, and organized outings. Our team makes group transportation simple and stress-free.",
     imageAlt: "A canoe on a clear mountain lake in the Canadian Rockies",
   },
 ];
@@ -65,20 +70,18 @@ export function ServicesSection() {
       id={servicesSection.id}
       sectionName={servicesSection.name}
       tone="blush"
-      decorated
-      className="overflow-hidden"
+      className="overflow-hidden bg-surface-blush"
     >
       <Container className="relative">
         <SectionHeading
           align="center"
           wide
           title={
-            <>
-              Charter Bus Services For
-              <SectionTitleAccent>Every Kind of Group</SectionTitleAccent>
-            </>
+            <span className={sectionTitleStackClass}>
+              <span className="block text-foreground">Charter Bus Services</span>
+              <SectionTitleAccent>for Every Kind of Group</SectionTitleAccent>
+            </span>
           }
-          description="From everyday group outings to milestone events, find a charter service that brings everyone along for the journey."
         />
 
         <div className="mx-auto mt-10 grid max-w-7xl items-stretch gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3">
@@ -97,6 +100,19 @@ export function ServicesSection() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
+                <div
+                  className="pointer-events-none absolute right-3 top-3 z-10 sm:right-4 sm:top-4"
+                >
+                  <Badge
+                    tone="neutral"
+                    className={cn(
+                      "border border-primary-100 bg-white/95 px-3 py-1 shadow-sm backdrop-blur-sm",
+                      exploreServicesTextClass
+                    )}
+                  >
+                    Demo image
+                  </Badge>
+                </div>
               </div>
 
               <div className="flex flex-1 flex-col items-center px-5 py-5 text-center sm:px-6 sm:py-6">
@@ -105,11 +121,16 @@ export function ServicesSection() {
                 >
                   {group.title}
                 </h3>
-                <p className="mt-2 line-clamp-2 text-sm leading-6 text-body-text">
+                <p className="mt-2 flex-1 text-sm leading-6 text-body-text">
                   {group.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-800">
-                  Explore service
+                <span
+                  className={cn(
+                    "mt-auto inline-flex items-center justify-center gap-2 pt-5",
+                    exploreServicesTextClass
+                  )}
+                >
+                  Explore services
                   <ArrowUpRight
                     className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5"
                     aria-hidden
@@ -120,61 +141,6 @@ export function ServicesSection() {
           ))}
         </div>
       </Container>
-      {/* Full-width Estimate CTA */}
-<section className="relative mt-16 w-full overflow-hidden sm:mt-20 lg:mt-24">
-  {/* Background image */}
-  <Image
-    src={siteMedia.commitment.servicesCtaBand}
-    alt=""
-    fill
-    priority
-    sizes="100vw"
-    className="object-cover object-center brightness-[1.02] contrast-[1.03]"
-  />
-
-  {/* Burgundy tint: stronger on the left for copy, lighter on the right so the photo reads clearly */}
-  <div
-    aria-hidden
-    className="absolute inset-0 bg-gradient-to-r from-primary-950/82 via-primary-900/38 to-primary-950/10"
-  />
-  <div
-    aria-hidden
-    className="absolute inset-0 bg-gradient-to-t from-primary-950/35 via-transparent to-primary-950/15"
-  />
-
-  {/* CTA content */}
-  <Container className="relative">
-    <div className="flex min-h-[420px] flex-col items-center justify-center gap-8 py-16 text-center sm:min-h-[460px] sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:text-left">
-      
-      {/* Text */}
-      <div className="max-w-3xl">
-        <h2 className={sectionTitleInvertedClass}>
-          Get an Estimate for Your{" "}
-          <span className="text-primary-100">
-            Charter Bus Rental
-          </span>
-        </h2>
-
-        <p className="mt-5 max-w-2xl text-sm leading-7 text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)] sm:text-base sm:leading-8">
-          Enter your trip details to get an estimated charter bus rental
-          cost based on your travel distance, trip duration, and number of
-          buses.
-        </p>
-      </div>
-
-      {/* Button */}
-      <div className="shrink-0">
-        <button
-          type="button"
-          className="group inline-flex min-h-16 cursor-default items-center justify-center gap-4 rounded-full bg-white px-8 py-5 text-sm font-extrabold uppercase tracking-[0.05em] text-primary-900 shadow-[0_12px_35px_rgba(53,0,20,0.25)] sm:min-w-[340px] sm:px-10"
-        >
-          Calculate Bus Rental Cost
-          <ArrowUpRight className="h-5 w-5" aria-hidden />
-        </button>
-      </div>
-    </div>
-  </Container>
-</section>
     </HomeSection>
   );
 }

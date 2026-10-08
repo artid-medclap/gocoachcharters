@@ -10,6 +10,9 @@ import {
   SectionTitleAccent,
   sectionBodyTextClass,
 } from "@/components/shared/SectionHeading";
+import { primaryButtonClass } from "@/lib/constants";
+import { sectionTitleStackClass } from "@/lib/typography";
+import { cn } from "@/lib/utils";
 
 export const commitmentSection = homeSectionMeta.commitment;
 
@@ -32,10 +35,11 @@ export function CommitmentSection() {
             <SectionHeading
               align="left"
               title={
-                <>
-                  Edmonton’s Local Charter Bus Company
+                <span className={sectionTitleStackClass}>
+                  <span className="block">Edmonton’s Local</span>
+                  <span className="block">Charter Bus Company</span>
                   <SectionTitleAccent>For Group Travel</SectionTitleAccent>
-                </>
+                </span>
               }
             />
 
@@ -65,7 +69,7 @@ export function CommitmentSection() {
 
             <Link
               href="/about-us/"
-              className="group mt-7 inline-flex min-h-12 w-fit items-center justify-center gap-3 rounded-full bg-primary-700 px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(115,0,40,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-800 hover:shadow-[0_16px_36px_rgba(115,0,40,0.24)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 sm:mt-8"
+              className={cn("group mt-7 sm:mt-8", primaryButtonClass, "min-h-12 px-6 py-3 text-sm")}
             >
               Learn More About Go Coach Charters
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">

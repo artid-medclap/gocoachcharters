@@ -101,7 +101,7 @@ export function SectionHeading({
     <p
       className={cn(
         sectionBodyTextClass,
-        "mt-5 sm:mt-6",
+        "mt-4 sm:mt-5",
         isInverted ? "!text-white/75" : undefined,
         isCenter && "mx-auto max-w-2xl",
         isSplit && "max-w-md lg:mt-0",
@@ -158,7 +158,7 @@ export function SectionTitleAccent({
     <span
       className={cn(
         sectionTitleAccentClass,
-        inverted ? sectionTitleAccentOnDarkClass : "text-primary-900",
+        inverted ? sectionTitleAccentOnDarkClass : "text-[#7a011f]",
         className
       )}
     >
