@@ -39,7 +39,7 @@ export function HeroSection() {
         className="object-cover object-center"
       />
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-black/40"
+        className="pointer-events-none absolute inset-0 z-[1] bg-black/60"
         aria-hidden
       />
 
