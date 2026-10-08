@@ -11,17 +11,20 @@ import { heroTitleClass } from "@/lib/typography";
 export const heroSection = homeSectionMeta.hero;
 
 const assurances = [
-  {
-    icon: CalendarCheck,
-    lines: ["Serving Groups Since", "2013"],
-  },
-  { icon: ShieldCheck, lines: ["Licensed & Insured"] },
-  { icon: UserRoundCheck, lines: ["Professional Drivers"] },
-  { icon: UsersRound, lines: ["1000+ Groups Served"] },
-];
+  { icon: CalendarCheck, label: "Serving Groups Since 2013" },
+  { icon: ShieldCheck, label: "Licensed & Insured" },
+  { icon: UserRoundCheck, label: "Professional Drivers" },
+  { icon: UsersRound, label: "1000+ Groups Served" },
+] as const;
 
 const assuranceIconClass =
-  "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#7c011e] shadow-[0_4px_14px_rgba(0,0,0,0.22)] ring-1 ring-white/40 sm:h-12 sm:w-12 sm:rounded-2xl";
+  "flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-primary-200/90 bg-white text-primary-900 shadow-sm sm:h-12 sm:w-12 sm:rounded-2xl";
+
+const assuranceBarClass =
+  "w-full rounded-2xl border border-white/35 bg-white/10 px-4 py-5 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-md backdrop-saturate-150 sm:rounded-3xl sm:px-6 sm:py-6 supports-[backdrop-filter]:bg-white/12";
+
+const assuranceTextClass =
+  "!text-sm font-medium leading-snug !text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:!text-[0.9375rem]";
 
 export function HeroSection() {
   return (
@@ -39,32 +42,31 @@ export function HeroSection() {
         className="object-cover object-center"
       />
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-black/60"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[rgba(0,0,0,0.49)]"
         aria-hidden
       />
-
       <Container
-        className="relative z-10 flex min-h-[min(100dvh,920px)] flex-col items-center justify-center px-4 pb-[7.5rem] pt-10 sm:min-h-[min(92vh,880px)] sm:pb-[8.5rem] sm:pt-14 lg:pb-36 lg:pt-16"
+        className="relative z-10 flex min-h-[min(100dvh,920px)] flex-col items-center justify-center px-4 pb-[11rem] pt-10 sm:min-h-[min(92vh,880px)] sm:pb-[12rem] sm:pt-14 lg:pb-44 lg:pt-16"
       >
-        <div className="mt-8 flex max-w-4xl flex-col items-center gap-8 px-2 py-4 text-center sm:mt-12 sm:gap-10 sm:px-6 sm:py-8 lg:mt-16 lg:gap-12 lg:px-10">
+        <div className="mt-8 flex max-w-6xl flex-col items-center gap-8 px-2 py-4 text-center sm:mt-12 sm:gap-10 sm:px-6 sm:py-8 lg:mt-16 lg:gap-12 lg:px-10">
           <h1
-            className={`mx-auto mt-0 flex max-w-4xl flex-col items-center gap-4 text-center sm:gap-5 lg:gap-6 ${heroTitleClass}`}
+            className={`mx-auto mt-0 flex max-w-6xl flex-col items-center gap-4 text-center sm:gap-5 lg:gap-6 ${heroTitleClass}`}
           >
-            <span>Charter Bus Rental Service</span>
+            <span>Charter Bus Rental</span>
             <span className="text-white">Across Alberta</span>
           </h1>
 
           <div className="flex w-full justify-center">
             <Link
               href={homeSections.getStarted}
-              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-primary-900 px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(88,0,33,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-800 hover:shadow-[0_16px_36px_rgba(88,0,33,0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700"
+              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-primary-900 px-6 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(122,1,31,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-800 hover:shadow-[0_16px_36px_rgba(122,1,31,0.34)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
             >
               <Image
                 src={siteMedia.brand.busIconWhite}
                 alt=""
                 width={50}
                 height={50}
-                className="h-6 w-6 object-contain"
+                className="h-9 w-9 object-contain text-md"
               />
               Request a Quote
             </Link>
@@ -72,33 +74,32 @@ export function HeroSection() {
         </div>
       </Container>
 
-      <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-3 sm:px-6 sm:pb-4 lg:pb-5">
+      <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 sm:px-6 sm:pb-5 lg:pb-6">
         <Container className="max-w-6xl">
-          <div
-            className="rounded-2xl bg-black/45 px-4 py-5 ring-1 ring-white/15 backdrop-blur-sm sm:rounded-3xl sm:px-6 sm:py-6 lg:px-8"
-            role="list"
-            aria-label="Why book with Go Coach"
-          >
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-              {assurances.map(({ icon: Icon, lines }) => (
+          <div className={assuranceBarClass}>
+            <div
+              className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-5 lg:flex lg:items-center lg:justify-between lg:gap-6"
+              role="list"
+              aria-label="Why book with Go Coach"
+            >
+              {assurances.map(({ icon: Icon, label }) => (
                 <div
-                  key={lines.join(" ")}
+                  key={label}
                   role="listitem"
-                  className="flex items-center gap-3 sm:gap-3.5 lg:justify-center"
+                  className="flex items-center gap-3 sm:gap-3.5"
                 >
                   <div className={assuranceIconClass}>
-                    <Icon className="h-5 w-5 sm:h-[1.35rem] sm:w-[1.35rem]" strokeWidth={2.5} aria-hidden />
+                    <Icon
+                      className="h-5 w-5 text-primary-900 sm:h-[1.3rem] sm:w-[1.3rem]"
+                      strokeWidth={2.35}
+                      aria-hidden
+                    />
                   </div>
-                  <div className="min-w-0 text-left">
-                    {lines.map((line) => (
-                      <p
-                        key={line}
-                        className="!text-sm font-semibold leading-snug !text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:!text-[0.9375rem]"
-                      >
-                        {line}
-                      </p>
-                    ))}
-                  </div>
+                  <p
+                    className={`${assuranceTextClass} min-w-0 text-left lg:whitespace-nowrap`}
+                  >
+                    {label}
+                  </p>
                 </div>
               ))}
             </div>

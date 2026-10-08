@@ -32,7 +32,7 @@ const footerLinkClass =
   "text-sm text-white underline decoration-white/50 underline-offset-2 transition-colors hover:decoration-white";
 
 const socialIconClass =
-  "flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#7c011e] shadow-[0_4px_14px_rgba(0,0,0,0.18)] ring-1 ring-white/25 transition-all hover:bg-primary-50 hover:shadow-[0_6px_18px_rgba(0,0,0,0.22)]";
+  "flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary-900 shadow-[0_4px_14px_rgba(0,0,0,0.18)] ring-1 ring-white/25 transition-all hover:bg-primary-50 hover:shadow-[0_6px_18px_rgba(0,0,0,0.22)]";
 
 const SOCIAL_ICONS: Record<
   SocialPlatform,
@@ -54,7 +54,12 @@ function FooterLinkColumn({
 }) {
   return (
     <div>
-      <h3 className={cn(sectionTitleCompactClass, "text-base text-white sm:text-lg")}>
+      <h3
+        className={cn(
+          sectionTitleCompactClass,
+          "!text-lg !font-semibold !text-white sm:!text-xl"
+        )}
+      >
         {title}
       </h3>
       <ul className="mt-4 space-y-2.5">

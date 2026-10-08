@@ -9,14 +9,14 @@ export const bodyTextSmClass =
 
 /** Primary section titles (h2) — homepage sections */
 export const sectionTitleClass = cn(
-  "text-balance font-extrabold tracking-[-0.04em]",
+  "text-balance font-semibold tracking-[-0.03em]",
   "text-3xl sm:text-4xl lg:text-5xl",
   "leading-[1.12] sm:leading-[1.1] lg:leading-[1.08]"
 );
 
 /** Trust bar & secondary band titles */
 export const sectionTitleCompactClass = cn(
-  "text-balance font-extrabold tracking-[-0.03em]",
+  "text-balance font-semibold tracking-[-0.025em]",
   "text-xl sm:text-2xl lg:text-3xl",
   "leading-[1.14] sm:leading-[1.12]"
 );
@@ -27,11 +27,11 @@ export const sectionTitleInvertedClass = cn(
   "leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
 );
 
-/** Hero h1 */
+/** Hero h1 — tight kerning + default word gaps (see route card overlays) */
 export const heroTitleClass = cn(
-  "text-balance font-extrabold leading-[1.08] tracking-[-0.045em]",
-  "text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem]",
-  "text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]"
+  "text-balance font-medium leading-[1.08] tracking-[-0.02em] [word-spacing:normal]",
+  "text-5xl sm:text-6xl lg:text-7xl xl:text-[5rem]",
+  "text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]"
 );
 
 /** Second line under section titles */
@@ -46,12 +46,12 @@ export const sectionTitleEmphasisBrandClass = "text-primary-700";
 
 /** Card & grid item titles (h3) */
 export const sectionCardTitleClass = cn(
-  "font-bold tracking-[-0.02em] text-primary-950",
+  "font-semibold tracking-[-0.02em] text-primary-950",
   "text-lg sm:text-xl"
 );
 
 /** Large feature panel title on dark imagery */
 export const featurePanelTitleClass = cn(
-  "max-w-sm font-bold tracking-[-0.028em] text-white",
+  "max-w-sm font-semibold tracking-[-0.025em] text-white",
   "text-2xl leading-[1.14] sm:text-3xl sm:leading-[1.12] lg:text-4xl"
 );

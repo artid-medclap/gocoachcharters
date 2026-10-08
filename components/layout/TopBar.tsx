@@ -56,7 +56,7 @@ export function TopBar() {
                 key={platform}
                 href={SOCIAL_LINKS[platform]}
                 aria-label={label}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#7c011e] shadow-sm ring-1 ring-border transition-colors hover:bg-primary-50"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary-900 shadow-sm ring-1 ring-border transition-colors hover:bg-primary-50"
               >
                 <Icon className="h-3.5 w-3.5" strokeWidth={3} />
               </Link>

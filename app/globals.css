@@ -2,8 +2,7 @@
 
 @theme {
   --font-sans:
-    var(--font-plus-jakarta), ui-sans-serif, system-ui, -apple-system,
-    sans-serif;
+    var(--font-poppins), ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --color-body-text: var(--body-text);
 
@@ -18,10 +17,10 @@
   --color-primary-400: #d9577d;
   --color-primary-500: #c2184a;
   --color-primary-600: #9e0038;
-  --color-primary-700: #85002f;
-  --color-primary-800: #730028;
-  --color-primary-900: #580021;
-  --color-primary-950: #350014;
+  --color-primary-700: #520113;
+  --color-primary-800: #610018;
+  --color-primary-900: #7a011f;
+  --color-primary-950: #38010e;
 
   /* ========================================
      SECONDARY — WHITE
@@ -51,8 +50,8 @@
   --color-accent-500: #e85b83;
   --color-accent-600: #c2184a;
   --color-accent-700: #9e0038;
-  --color-accent-800: #730028;
-  --color-accent-900: #580021;
+  --color-accent-800: #610018;
+  --color-accent-900: #7a011f;
 
   /* ========================================
      RADIUS
@@ -67,8 +66,8 @@
      SHADOWS
      ======================================== */
 
-  --shadow-card: 0 8px 24px -12px rgb(158 0 56 / 0.15);
-  --shadow-soft: 0 24px 48px -20px rgb(158 0 56 / 0.2);
+  --shadow-card: 0 8px 24px -12px rgb(122 1 31 / 0.15);
+  --shadow-soft: 0 24px 48px -20px rgb(122 1 31 / 0.2);
 }
 
 :root {
@@ -91,8 +90,10 @@
      BRAND
      ======================================== */
 
-  --brand-primary: #9e0038;
-  --brand-primary-dark: #730028;
+  --brand-primary: #7a011f;
+  --brand-primary-dark: #610018;
+  --brand-burgundy: #7a011f;
+  --brand-burgundy-hover: #610018;
   --brand-secondary: #ffffff;
   --brand-accent: #c2184a;
 }
@@ -110,8 +111,10 @@
     --border: #eadde2;
     --muted-foreground: #3d3d3d;
 
-    --brand-primary: #9e0038;
-    --brand-primary-dark: #730028;
+    --brand-primary: #7a011f;
+    --brand-primary-dark: #610018;
+    --brand-burgundy: #7a011f;
+    --brand-burgundy-hover: #610018;
     --brand-secondary: #ffffff;
     --brand-accent: #c2184a;
   }
@@ -153,16 +156,24 @@ body {
   }
 
   p {
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
     color: var(--body-text);
   }
 
-  h1,
+  h1 {
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: normal;
+    color: var(--foreground);
+  }
+
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-weight: 700;
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
     letter-spacing: -0.025em;
     color: var(--foreground);
   }

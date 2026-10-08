@@ -184,7 +184,7 @@ export function FeaturedRoutesSection() {
                 <g clipPath="url(#map-canvas-clip)">
                 <path
                   d="M52 34L254 79L286 103L470 137L669 157L663 501L470 486L350 464L278 447L225 415L185 376L156 333L130 290L108 245L88 204L70 164L59 126L63 94L48 67Z"
-                  fill="#580021"
+                  fill="#7a011f"
                   filter="url(#province-shadow)"
                   strokeLinejoin="round"
                 />
@@ -192,7 +192,7 @@ export function FeaturedRoutesSection() {
                 <g clipPath="url(#alberta-map-clip)">
                   <path
                     d="M52 34L254 79L286 103L470 137L669 157L663 501L470 486L350 464L278 447L225 415L185 376L156 333L130 290L108 245L88 204L70 164L59 126L63 94L48 67Z"
-                    fill="#580021"
+                    fill="#7a011f"
                     strokeLinejoin="round"
                   />
 

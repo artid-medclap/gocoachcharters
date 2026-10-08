@@ -76,7 +76,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         <Button
           href={homeSections.getStarted}
-          className="mt-2 w-full bg-[#7c011e] text-white shadow-[0_8px_24px_rgba(124,1,30,0.2)] hover:bg-[#630018] focus-visible:ring-[#7c011e]"
+          className="mt-2 w-full bg-primary-900 text-white shadow-[0_8px_24px_rgba(122,1,31,0.22)] hover:bg-primary-800 focus-visible:ring-primary-900"
           onClick={onClose}
         >
           Get A Quote
