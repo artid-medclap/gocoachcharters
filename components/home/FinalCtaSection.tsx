@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 import { homeSectionMeta } from "@/lib/home-sections";
 import { siteMedia } from "@/lib/site-media";
+import { sectionTitleInvertedClass } from "@/lib/typography";
 
 export const finalCtaSection = homeSectionMeta.getStarted;
 
@@ -25,7 +26,7 @@ export function FinalCtaSection() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary-950/80 via-primary-900/70 to-primary-950/85" />
 
       <div className="relative mx-auto max-w-4xl">
-        <h2 className="text-balance text-3xl font-extrabold leading-tight tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl">
+        <h2 className={sectionTitleInvertedClass}>
           Book Your Charter Bus Rental Today
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-white/90 sm:text-lg sm:leading-8">

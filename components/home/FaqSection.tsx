@@ -7,6 +7,12 @@ import { Container } from "@/components/shared/Container";
 import { cn } from "@/lib/utils";
 import { faqs } from "@/data/faqs";
 import { homeSectionMeta } from "@/lib/home-sections";
+import {
+  bodyTextClass,
+  bodyTextSmClass,
+  sectionTitleClass,
+  sectionTitleEmphasisClass,
+} from "@/lib/typography";
 
 export const faqSection = homeSectionMeta.faq;
 
@@ -40,15 +46,15 @@ export function FaqSection() {
           </div>
 
           {/* Heading */}
-          <h2 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.02] tracking-[-0.045em] text-primary-950 sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h2 className={cn("mt-6 max-w-4xl text-primary-950", sectionTitleClass)}>
             Questions,
-            <span className="block text-primary-800">
+            <span className={cn("block", sectionTitleEmphasisClass)}>
               answered clearly.
             </span>
           </h2>
 
           {/* Description */}
-          <p className="mt-6 max-w-2xl text-base leading-7 text-primary-950/55 sm:text-lg">
+          <p className={`mt-6 max-w-2xl ${bodyTextClass}`}>
             Everything you need to know about booking, pricing, routes, and group
             transportation.
           </p>
@@ -129,7 +135,7 @@ export function FaqSection() {
                       <div className="flex gap-4">
                         <div className="hidden w-10 shrink-0 sm:block" />
 
-                        <p className="max-w-3xl text-sm leading-7 text-primary-950/55 sm:text-[15px]">
+                        <p className={`max-w-3xl ${bodyTextSmClass}`}>
                           {faq.answer}
                         </p>
                       </div>

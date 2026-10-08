@@ -1,3 +1,4 @@
+import { sectionCardTitleClass } from "@/lib/typography";
 import { cn } from "@/lib/utils";
 
 /** Shared elevation + border for homepage image/text cards */
@@ -60,8 +61,7 @@ export const sectionRouteGradient =
 export const sectionCardBody =
   "flex min-h-[168px] flex-1 flex-col p-5 sm:min-h-[180px] sm:p-6";
 
-export const sectionCardTitle =
-  "text-lg font-bold tracking-[-0.02em] text-primary-950 sm:text-xl";
+export const sectionCardTitle = sectionCardTitleClass;
 
 export const sectionCardDescription =
-  "mt-2 line-clamp-3 flex-1 text-sm leading-6 text-primary-950/55";
+  "mt-2 line-clamp-3 flex-1 text-sm leading-6 text-body-text sm:text-base sm:leading-7";

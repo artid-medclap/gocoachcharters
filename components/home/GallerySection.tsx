@@ -9,6 +9,13 @@ import { Container } from "@/components/shared/Container";
 import { galleryItemsRow1, galleryItemsRow2 } from "@/data/gallery";
 import type { GalleryItem } from "@/types/gallery";
 import { homeSectionMeta } from "@/lib/home-sections";
+import {
+  bodyTextClass,
+  bodyTextSmClass,
+  sectionTitleClass,
+  sectionTitleEmphasisClass,
+} from "@/lib/typography";
+import { cn } from "@/lib/utils";
 
 export const gallerySection = homeSectionMeta.gallery;
 
@@ -182,15 +189,15 @@ export function GallerySection() {
           </div>
 
           {/* Heading */}
-          <h2 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.02] tracking-[-0.045em] text-primary-950 sm:text-5xl lg:text-6xl">
+          <h2 className={cn("mt-6 max-w-4xl text-primary-950", sectionTitleClass)}>
             Moments in motion.
-            <span className="block text-primary-800">
+            <span className={cn("block", sectionTitleEmphasisClass)}>
               Explore our fleet & journeys.
             </span>
           </h2>
 
           {/* Description */}
-          <p className="mt-6 max-w-2xl text-base leading-7 text-primary-950/60 sm:text-lg">
+          <p className={`mt-6 max-w-2xl ${bodyTextClass}`}>
             From executive charters and cross-province tours to athletic teams and wedding shuttles,
             take a visual look at how Go Coach delivers comfortable group travel across Alberta.
           </p>
@@ -267,7 +274,7 @@ export function GallerySection() {
             </span>
           </Link>
 
-          <p className="text-xs sm:text-sm font-medium text-primary-950/50">
+          <p className="text-xs font-medium text-body-text sm:text-sm">
             Discover full vehicle specifications, interior layouts, and charter experiences
           </p>
         </div>
@@ -340,7 +347,7 @@ export function GallerySection() {
                     {selectedItem.title}
                   </h3>
                   {selectedItem.description && (
-                    <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+                    <p className={`mt-2 ${bodyTextSmClass}`}>
                       {selectedItem.description}
                     </p>
                   )}

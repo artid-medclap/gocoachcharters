@@ -10,6 +10,7 @@ import {
 } from "@/components/shared/SectionHeading";
 import { homeSectionMeta } from "@/lib/home-sections";
 import { siteMedia } from "@/lib/site-media";
+import { sectionCardTitleClass, sectionTitleInvertedClass } from "@/lib/typography";
 
 const GROUPS = [
   {
@@ -73,7 +74,7 @@ export function ServicesSection() {
           wide
           title={
             <>
-              Charter Bus Services for
+              Charter Bus Services For
               <SectionTitleAccent>Every Kind of Group</SectionTitleAccent>
             </>
           }
@@ -99,10 +100,12 @@ export function ServicesSection() {
               </div>
 
               <div className="flex flex-1 flex-col items-center px-5 py-5 text-center sm:px-6 sm:py-6">
-                <h3 className="text-base font-bold uppercase leading-snug tracking-[0.06em] text-primary-950 transition-colors group-hover:text-primary-700 sm:text-lg">
+                <h3
+                  className={`${sectionCardTitleClass} transition-colors group-hover:text-primary-700`}
+                >
                   {group.title}
                 </h3>
-                <p className="mt-2 line-clamp-2 text-sm leading-6 text-primary-950/65">
+                <p className="mt-2 line-clamp-2 text-sm leading-6 text-body-text">
                   {group.description}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-800">
@@ -145,7 +148,7 @@ export function ServicesSection() {
       
       {/* Text */}
       <div className="max-w-3xl">
-        <h2 className="text-3xl font-extrabold leading-tight tracking-[-0.035em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:text-4xl lg:text-5xl">
+        <h2 className={sectionTitleInvertedClass}>
           Get an Estimate for Your{" "}
           <span className="text-primary-100">
             Charter Bus Rental

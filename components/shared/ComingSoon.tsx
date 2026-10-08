@@ -1,6 +1,7 @@
 import { Construction } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Button } from "@/components/shared/Button";
+import { sectionTitleClass } from "@/lib/typography";
 
 interface ComingSoonProps {
   title: string;
@@ -14,8 +15,10 @@ export function ComingSoon({ title, description }: ComingSoonProps) {
         <Construction className="h-8 w-8" />
       </span>
       <div className="space-y-3">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h1>
-        <p className="mx-auto max-w-md text-muted-foreground">{description}</p>
+        <h1 className={`text-foreground ${sectionTitleClass}`}>
+          {title}
+        </h1>
+        <p className="mx-auto max-w-md text-body-text">{description}</p>
       </div>
       <Button href="/">Back to home</Button>
     </Container>

@@ -45,7 +45,7 @@ export default function NotFound() {
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Looks like this route doesn&apos;t run anymore
           </h1>
-          <p className="mx-auto max-w-md text-muted-foreground">
+          <p className="mx-auto max-w-md text-body-text">
             The page you&apos;re looking for doesn&apos;t exist or may have moved. Let&apos;s get you
             back on track.
           </p>

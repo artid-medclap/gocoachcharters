@@ -34,7 +34,7 @@ export function CommitmentSection() {
               title={
                 <>
                   Edmonton’s Local Charter Bus Company
-                  <SectionTitleAccent>for Group Travel</SectionTitleAccent>
+                  <SectionTitleAccent>For Group Travel</SectionTitleAccent>
                 </>
               }
             />

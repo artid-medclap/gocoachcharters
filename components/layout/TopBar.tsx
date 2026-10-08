@@ -1,30 +1,67 @@
+import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
+
 import { Container } from "@/components/shared/Container";
-import { FacebookIcon, InstagramIcon, XIcon } from "@/components/shared/SocialIcons";
-import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from "@/lib/constants";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  XIcon,
+  YouTubeIcon,
+} from "@/components/shared/SocialIcons";
+import { homeSections } from "@/data/navigation";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  FOOTER_SOCIAL,
+  SOCIAL_LINKS,
+  type SocialPlatform,
+} from "@/lib/constants";
+import type { ComponentType, SVGProps } from "react";
+
+const TOPBAR_SOCIAL_ICONS: Record<
+  SocialPlatform,
+  ComponentType<SVGProps<SVGSVGElement>>
+> = {
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+  twitter: XIcon,
+  linkedin: LinkedInIcon,
+  youtube: YouTubeIcon,
+};
 
 export function TopBar() {
   return (
     <div className="hidden border-b border-border bg-surface-muted text-xs text-muted-foreground md:block">
       <Container className="flex h-10 items-center justify-between">
         <div className="flex items-center gap-6">
-          <a href={`tel:${CONTACT_PHONE}`} className="flex items-center gap-2 hover:text-foreground">
+          <Link
+            href={homeSections.contact}
+            className="flex items-center gap-2 hover:text-foreground"
+          >
             <Phone className="h-3.5 w-3.5" /> {CONTACT_PHONE}
-          </a>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 hover:text-foreground">
+          </Link>
+          <Link
+            href={homeSections.contact}
+            className="flex items-center gap-2 hover:text-foreground"
+          >
             <Mail className="h-3.5 w-3.5" /> {CONTACT_EMAIL}
-          </a>
+          </Link>
         </div>
         <div className="flex items-center gap-4">
-          <a href={SOCIAL_LINKS.facebook} aria-label="Facebook" className="hover:text-foreground">
-            <FacebookIcon className="h-3.5 w-3.5" />
-          </a>
-          <a href={SOCIAL_LINKS.instagram} aria-label="Instagram" className="hover:text-foreground">
-            <InstagramIcon className="h-3.5 w-3.5" />
-          </a>
-          <a href={SOCIAL_LINKS.twitter} aria-label="X (Twitter)" className="hover:text-foreground">
-            <XIcon className="h-3.5 w-3.5" />
-          </a>
+          {FOOTER_SOCIAL.map(({ platform, label }) => {
+            const Icon = TOPBAR_SOCIAL_ICONS[platform];
+            return (
+              <Link
+                key={platform}
+                href={SOCIAL_LINKS[platform]}
+                aria-label={label}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#7c011e] shadow-sm ring-1 ring-border transition-colors hover:bg-primary-50"
+              >
+                <Icon className="h-3.5 w-3.5" strokeWidth={3} />
+              </Link>
+            );
+          })}
         </div>
       </Container>
     </div>

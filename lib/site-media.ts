@@ -8,6 +8,7 @@ export const siteMedia = {
     busIconWhite: "/media/brand/icon-bus-white.webp",
   },
   home: {
+    heroGoCoachBuses: "/media/home/go-coach-buses-webp.webp",
     heroFleetWide: "/media/home/hero-fleet-wide.webp",
     heroFleet: "/media/home/hero-fleet.webp",
     heroCityscape: "/media/home/hero-cityscape.webp",
@@ -29,7 +30,7 @@ export const siteMedia = {
   },
   fleet: {
     motorcoachMaroon: "/media/fleet/motorcoach-maroon.webp",
-    motorCoach: "/media/fleet/motor-coach.webp",
+    motorCoach: "/media/fleet/full_size_coach.webp",
     miniCoach: "/media/fleet/mini-coach.webp",
     fordTransit: "/media/fleet/ford-transit.webp",
   },

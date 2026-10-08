@@ -17,6 +17,7 @@ import {
 
 import { Container } from "@/components/shared/Container";
 import { allGalleryItems } from "@/data/gallery";
+import { bodyTextClass, bodyTextSmClass } from "@/lib/typography";
 import type { GalleryItem } from "@/types/gallery";
 
 const CATEGORIES = [
@@ -65,7 +66,7 @@ export default function GalleryPage() {
               <span className="block text-primary-800">before you step aboard.</span>
             </h1>
 
-            <p className="mt-6 text-base leading-7 text-primary-950/60 sm:text-lg">
+            <p className={`mt-6 ${bodyTextClass}`}>
               Browse our diverse fleet of charter buses, luxury mini coaches, executive interiors,
               and scenic Alberta destinations from Edmonton to Calgary, Banff, and Jasper.
             </p>
@@ -173,7 +174,7 @@ export default function GalleryPage() {
                       {item.title}
                     </h2>
                     {item.description && (
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      <p className={`mt-2 ${bodyTextSmClass}`}>
                         {item.description}
                       </p>
                     )}
@@ -219,7 +220,7 @@ export default function GalleryPage() {
                 <h3 className="mt-2 text-2xl font-bold text-primary-950 sm:text-3xl">
                   Reserve your coach or get an instant group quote
                 </h3>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+                <p className={`mt-3 ${bodyTextSmClass}`}>
                   Whether you are planning a corporate conference, a wedding party, or a sporting tournament,
                   our team is ready to assist with custom itineraries and transparent pricing.
                 </p>
@@ -297,7 +298,7 @@ export default function GalleryPage() {
                     {selectedItem.title}
                   </h3>
                   {selectedItem.description && (
-                    <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+                    <p className={`mt-2 ${bodyTextSmClass}`}>
                       {selectedItem.description}
                     </p>
                   )}

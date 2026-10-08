@@ -41,7 +41,7 @@ export function CustomerReviewsSection() {
                   </span>
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold">{review.name}</p>
-                    <p className="mt-0.5 truncate text-xs text-muted-foreground">
+                    <p className="mt-0.5 truncate text-xs text-body-text/80">
                       {review.role}, {review.location}
                     </p>
                   </div>
@@ -75,7 +75,7 @@ export function CustomerReviewsSection() {
                 />
               </div>
 
-              <p className="mt-3 line-clamp-4 text-sm leading-[1.4] text-primary-950/80">
+              <p className="mt-3 line-clamp-4 text-sm leading-[1.4] text-body-text">
                 {review.quote}
               </p>
 

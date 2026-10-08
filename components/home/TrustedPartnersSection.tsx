@@ -58,15 +58,13 @@ export function TrustedPartnersSection() {
       aria-label={trustedPartnersSection.name}
     >
       <HomeSectionDecor />
-      <Container className="relative mb-8 flex items-center justify-center gap-3 sm:mb-10">
-        <span className="hidden h-px w-6 bg-primary-200/80 sm:block" aria-hidden />
+      <Container className="relative mb-8 sm:mb-10 lg:mb-16 text-3xl capitalize">
         <SectionHeading
           align="center"
           size="compact"
           title="Trusted by Groups Across Alberta"
           className="max-w-none"
         />
-        <span className="hidden h-px w-6 bg-primary-200/80 sm:block" aria-hidden />
       </Container>
 
       <div className="relative">

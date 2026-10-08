@@ -6,6 +6,8 @@ import { ClipboardList, MessageSquare, CheckCircle2, Bus, CalendarCheck, Users ,
 import { Container } from "@/components/shared/Container";
 import { homeSectionMeta } from "@/lib/home-sections";
 import { siteMedia } from "@/lib/site-media";
+import { sectionTitleClass, sectionTitleEmphasisBrandClass } from "@/lib/typography";
+import { cn } from "@/lib/utils";
 
 const STEP_IMAGES = [
   { src: siteMedia.booking.stepRequestQuote, alt: "Request a quote" },
@@ -155,20 +157,9 @@ export function BookingStepsSection() {
           </div>
 
           {/* Heading */}
-          <h2
-            className="
-              mt-5
-              text-4xl
-              font-bold
-              leading-tight
-              tracking-tight
-              text-slate-950
-              sm:text-5xl
-              lg:text-6xl
-            "
-          >
-            Book your charter in{' '}
-            <span className="text-primary-700">3 simple steps</span>
+          <h2 className={cn("mt-5 text-slate-950", sectionTitleClass)}>
+            Book your charter in{" "}
+            <span className={sectionTitleEmphasisBrandClass}>3 simple steps</span>
           </h2>
 
           {/* Description */}

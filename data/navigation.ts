@@ -11,6 +11,13 @@ export const homeSections = {
   amenities: "/#amenities",
   reviews: "/#reviews",
   getStarted: "/#get-started",
+  faq: "/#faq",
+  gallery: "/gallery",
+  contact: "/contact",
+  destinations: "/destinations",
+  blog: "/about",
+  aboutUs: "/about-us",
+  policies: "/about-us",
 } as const;
 
 export const mainNav: NavItem[] = [
@@ -49,6 +56,28 @@ export const footerCompany: NavItem[] = [
   { label: "Group services", href: homeSections.services },
   { label: "Charter routes", href: homeSections.featuredRoutes },
   { label: "Get a quote", href: homeSections.getStarted },
+];
+
+export const footerQuickLinks: NavItem[] = [
+  { label: "Blog", href: homeSections.blog },
+  { label: "Gallery", href: homeSections.gallery },
+  { label: "About Us", href: homeSections.aboutUs },
+  { label: "Request A Quote", href: homeSections.getStarted },
+  { label: "Our Policies", href: homeSections.policies },
+  { label: "Privacy Policy", href: homeSections.policies },
+  { label: "Reviews", href: homeSections.reviews },
+  { label: "FAQ", href: homeSections.faq },
+  { label: "Safety", href: homeSections.safety },
+];
+
+export const footerLocations: NavItem[] = [
+  { label: "Edmonton", href: homeSections.destinations },
+  { label: "Calgary", href: homeSections.destinations },
+  { label: "Sherwood Park", href: homeSections.destinations },
+  { label: "Lloydminster", href: homeSections.destinations },
+  { label: "St Albert", href: homeSections.destinations },
+  { label: "Saskatchewan", href: homeSections.destinations },
+  { label: "Red Deer", href: homeSections.destinations },
 ];
 
 export const contactPhone = {

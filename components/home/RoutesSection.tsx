@@ -37,7 +37,7 @@ export function RoutesSection() {
                 <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
                 <span>{route.to}</span>
               </div>
-              <p className="mt-3 text-sm text-muted-foreground">{route.description}</p>
+              <p className="mt-3 text-sm text-body-text">{route.description}</p>
               <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <Clock3 className="h-3.5 w-3.5" /> {route.duration}

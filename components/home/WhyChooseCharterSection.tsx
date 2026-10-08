@@ -15,6 +15,8 @@ import {
   SectionTitleAccent,
 } from "@/components/shared/SectionHeading";
 import { homeSectionMeta } from "@/lib/home-sections";
+import { featurePanelTitleClass } from "@/lib/typography";
+import { cn } from "@/lib/utils";
 import {
   sectionCard,
   sectionCardAccentBar,
@@ -126,7 +128,7 @@ export function WhyChooseCharterSection() {
                   Group travel made simple
                 </p>
 
-                <h3 className="mt-4 max-w-sm text-2xl font-bold leading-[1.14] tracking-[-0.028em] text-white sm:text-3xl sm:leading-[1.12] lg:text-4xl">
+                <h3 className={cn("mt-4", featurePanelTitleClass)}>
                   One Comfortable Coach.
                   <span className="mt-2 block text-primary-200 sm:mt-2.5">
                     One Organized Journey.

@@ -10,6 +10,8 @@ import {
 } from "@/components/shared/SectionHeading";
 import { fleet } from "@/data/fleet";
 import { homeSectionMeta } from "@/lib/home-sections";
+import { sectionCardTitleClass } from "@/lib/typography";
+import { bodyTextSmClass } from "@/lib/typography";
 
 export const fleetShowcaseSection = homeSectionMeta.fleet;
 
@@ -30,7 +32,7 @@ export function FleetShowcaseSection() {
           title={
             <>
               Choose the Right Coach
-              <SectionTitleAccent>for Your Group</SectionTitleAccent>
+              <SectionTitleAccent>For Your Group</SectionTitleAccent>
             </>
           }
           description="Find a comfortable ride for your group size, travel plans, and destination."
@@ -53,14 +55,14 @@ export function FleetShowcaseSection() {
               </div>
 
               <div className="flex flex-1 flex-col items-center px-5 py-5 text-center sm:px-6 sm:py-6">
-                <h3 className="text-lg font-bold uppercase tracking-[0.06em] text-primary-950 sm:text-xl">
+                <h3 className={sectionCardTitleClass}>
                   {vehicle.name}
                 </h3>
                 <div className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-primary-800">
                   <Users className="h-4 w-4" aria-hidden />
                   {vehicle.capacity}
                 </div>
-                <p className="mt-3 max-w-sm text-sm leading-6 text-primary-950/65 sm:text-base sm:leading-7">
+                <p className={`mt-3 max-w-sm ${bodyTextSmClass}`}>
                   {vehicle.description}
                 </p>
 

@@ -3,29 +3,29 @@ import { siteMedia } from "@/lib/site-media";
 export const fleet = [
   {
     id: "motor-coach",
-    name: "Motor Coach",
+    name: "Large Group Coach  ",
     image: siteMedia.fleet.motorcoachMaroon,
     imageAlt: "Go Coach motor coach parked and ready for group travel",
     capacity: "52–56 passengers",
     description:
-      "Full-size MCI and Prevost coaches offer spacious seating and luggage room for larger groups.",
+      "Spacious and comfortable transportation for large groups, with plenty of seating and luggage space.",
   },
   {
     id: "mini-coach",
-    name: "Mini Coach",
+    name: "Full-Size Coach",
     image: siteMedia.fleet.motorCoach,
     imageAlt: "Go Coach black Ford F-550 Mini Coach",
-    capacity: "Up to 27 passengers",
+    capacity: "36–56 passengers",
     description:
-      "A comfortable, easy-to-board option for smaller groups, local trips, and special events.",
+      "A comfortable choice for medium to large groups, with ample space for passengers and luggage.",
   },
   {
     id: "ford-transit",
-    name: "Ford Transit",
+    name: "Mini Bus",
     image: siteMedia.fleet.fordTransit,
     imageAlt: "Black Ford passenger coach photographed outdoors",
-    capacity: "Up to 13 passengers",
+    capacity: "Up to 25 passengers",
     description:
-      "A nimble choice for smaller groups, with room for passengers and personal luggage.",
+      "A convenient choice for smaller groups, ideal for local trips, events, and short group outings.",
   },
 ];
