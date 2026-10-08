@@ -93,7 +93,7 @@ export function FeaturedRoutesSection() {
       sectionName={featuredRoutesSection.name}
       tone="white"
       decorated
-      className="overflow-hidden"
+      className="overflow-hidden border-b border-primary-100/90"
     >
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">

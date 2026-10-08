@@ -44,6 +44,10 @@ export const primaryButtonClass =
 export const frostedTrustSurfaceClass =
   "border-white/35 bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-white/12";
 
+/** Light frosted pill on the hero — matches marketing trust bar over the bus photo. */
+export const heroTrustBarSurfaceClass =
+  "border border-white/90 bg-gradient-to-t from-primary-100/55 via-white/65 to-white/75 shadow-[0_16px_48px_-12px_rgba(122,1,31,0.22)] backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:from-primary-100/45 supports-[backdrop-filter]:via-white/60 supports-[backdrop-filter]:to-white/72";
+
 /** Same frosted treatment on light pink (footer, blush sections). */
 export const frostedTrustSurfaceLightClass =
   "border-primary-100/90 bg-white/45 shadow-[0_8px_32px_rgba(122,1,31,0.08)] backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-white/55";

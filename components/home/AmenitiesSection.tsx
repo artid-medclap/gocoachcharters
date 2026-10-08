@@ -81,32 +81,27 @@ export function AmenitiesSection() {
           wide
           className="mx-auto"
           title={
-            <>
-              What&apos;s On <SectionTitleAccent>Board?</SectionTitleAccent>
-            </>
+            <span className="inline-block whitespace-nowrap">
+              What&apos;s On{" "}
+              <SectionTitleAccent className="!inline !mt-0">
+                Board?
+              </SectionTitleAccent>
+            </span>
           }
-          description="Comfort and convenience on every trip, without the clutter."
         />
       </Container>
 
-      <div
-        className="amenities-marquee relative mt-10 sm:mt-12 lg:mt-14"
-        aria-label="Onboard amenities"
-      >
+      <Container className="relative mt-10 sm:mt-12 lg:mt-14">
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-surface-blush to-transparent sm:w-20"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-surface-blush to-transparent sm:w-20"
-          aria-hidden
-        />
-
-        <div className="flex w-max animate-amenities-marquee items-center">
+          className="amenities-marquee relative overflow-hidden"
+          aria-label="Onboard amenities"
+        >
+        <div className="flex w-max animate-amenities-marquee items-center py-1 pl-2 sm:pl-3">
           <FeatureSet />
           <FeatureSet duplicate />
         </div>
-      </div>
+        </div>
+      </Container>
     </HomeSection>
   );
 }

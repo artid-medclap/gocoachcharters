@@ -24,7 +24,7 @@ export const fleet = [
     name: "Mini Bus",
     image: siteMedia.fleet.fordTransit,
     imageAlt: "Black Ford passenger coach photographed outdoors",
-    capacity: "Up to 25 passengers",
+    capacity: "Up to 20 passengers",
     description:
       "A convenient choice for smaller groups, ideal for local trips, events, and short group outings.",
   },

@@ -4,7 +4,7 @@ import { CalendarCheck, ShieldCheck, UserRoundCheck, UsersRound } from "lucide-r
 
 import { Container } from "@/components/shared/Container";
 import { homeSections } from "@/data/navigation";
-import { frostedTrustSurfaceClass, primaryButtonClass } from "@/lib/constants";
+import { heroTrustBarSurfaceClass, primaryButtonClass } from "@/lib/constants";
 import { homeSectionMeta } from "@/lib/home-sections";
 import { siteMedia } from "@/lib/site-media";
 import { heroTitleClass } from "@/lib/typography";
@@ -13,19 +13,17 @@ import { cn } from "@/lib/utils";
 export const heroSection = homeSectionMeta.hero;
 
 const assurances = [
-  { icon: CalendarCheck, label: "Serving Groups Since 2013" },
-  { icon: ShieldCheck, label: "Licensed & Insured" },
-  { icon: UserRoundCheck, label: "Professional Drivers" },
-  { icon: UsersRound, label: "1000+ Groups Served" },
+  { icon: CalendarCheck, lines: ["Serving Groups", "Since 2013"] },
+  { icon: ShieldCheck, lines: ["Licensed &", "Insured"] },
+  { icon: UserRoundCheck, lines: ["Professional", "Drivers"] },
+  { icon: UsersRound, lines: ["1000+ Groups", "Served"] },
 ] as const;
 
 const assuranceIconClass =
-  "flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-primary-200/90 bg-white text-primary-900 shadow-sm sm:h-12 sm:w-12 sm:rounded-2xl";
-
-const assuranceBarClass = `w-full rounded-2xl border px-4 py-5 sm:rounded-3xl sm:px-6 sm:py-6 ${frostedTrustSurfaceClass}`;
+  "flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-primary-900 shadow-[0_4px_14px_rgba(122,1,31,0.12)] sm:h-[3.25rem] sm:w-[3.25rem]";
 
 const assuranceTextClass =
-  "!text-sm font-medium leading-snug !text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:!text-[0.9375rem]";
+  "text-left text-[0.8125rem] font-semibold leading-[1.25] text-primary-950 sm:text-sm";
 
 export function HeroSection() {
   return (
@@ -47,7 +45,7 @@ export function HeroSection() {
         aria-hidden
       />
       <Container
-        className="relative z-10 flex min-h-[min(100dvh,920px)] flex-col items-center justify-center px-4 pb-[11rem] pt-10 sm:min-h-[min(92vh,880px)] sm:pb-[12rem] sm:pt-14 lg:pb-44 lg:pt-16"
+        className="relative z-10 flex min-h-[min(100dvh,920px)] flex-col items-center justify-center px-4 pb-36 pt-10 sm:min-h-[min(92vh,880px)] sm:pb-40 sm:pt-14 lg:pb-44 lg:pt-16"
       >
         <div className="mt-8 flex max-w-6xl flex-col items-center gap-8 px-2 py-4 text-center sm:mt-12 sm:gap-10 sm:px-6 sm:py-8 lg:mt-16 lg:gap-12 lg:px-10">
           <h1
@@ -75,31 +73,38 @@ export function HeroSection() {
         </div>
       </Container>
 
-      <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 sm:px-6 sm:pb-5 lg:pb-6">
-        <Container className="max-w-6xl">
-          <div className={assuranceBarClass}>
+      <div className="pointer-events-none absolute inset-x-0 bottom-5 z-20 px-4 sm:bottom-7 lg:bottom-9">
+        <Container className="pointer-events-auto max-w-6xl px-0 sm:px-4">
+          <div
+            className={cn(
+              "overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]",
+              heroTrustBarSurfaceClass
+            )}
+            role="list"
+            aria-label="Why book with Go Coach"
+          >
             <div
-              className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-5 lg:flex lg:items-center lg:justify-between lg:gap-6"
-              role="list"
-              aria-label="Why book with Go Coach"
+              className="grid grid-cols-1 divide-y divide-primary-200/70 sm:grid-cols-2 sm:divide-x sm:divide-y lg:grid-cols-4 lg:divide-y-0"
             >
-              {assurances.map(({ icon: Icon, label }) => (
+              {assurances.map(({ icon: Icon, lines }) => (
                 <div
-                  key={label}
+                  key={lines.join(" ")}
                   role="listitem"
-                  className="flex items-center gap-3 sm:gap-3.5"
+                  className="flex items-center justify-center gap-3 px-5 py-5 sm:gap-3.5 sm:px-6 sm:py-6 lg:justify-center"
                 >
                   <div className={assuranceIconClass}>
                     <Icon
-                      className="h-5 w-5 text-primary-900 sm:h-[1.3rem] sm:w-[1.3rem]"
+                      className="h-[1.35rem] w-[1.35rem] text-primary-900 sm:h-6 sm:w-6"
                       strokeWidth={2.35}
                       aria-hidden
                     />
                   </div>
-                  <p
-                    className={`${assuranceTextClass} min-w-0 text-left lg:whitespace-nowrap`}
-                  >
-                    {label}
+                  <p className={`${assuranceTextClass} min-w-0`}>
+                    {lines.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
                   </p>
                 </div>
               ))}

@@ -1,4 +1,4 @@
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Quote, Star } from "lucide-react";
 
 import { Container } from "@/components/shared/Container";
 import { HomeSection } from "@/components/shared/HomeSection";
@@ -9,7 +9,6 @@ import {
 import { reviews } from "@/data/reviews";
 import { primaryButtonClass } from "@/lib/constants";
 import { homeSectionMeta } from "@/lib/home-sections";
-import { sectionTitleStackClass } from "@/lib/typography";
 import { cn } from "@/lib/utils";
 
 const reviewsSearchUrl =
@@ -18,13 +17,12 @@ const reviewsSearchUrl =
 export const customerReviewsSection = homeSectionMeta.reviews;
 
 const displayedReviews = reviews.slice(0, 3);
-const [featuredReview, ...supportingReviews] = displayedReviews;
 
 const averageRating =
   displayedReviews.reduce((sum, r) => sum + r.rating, 0) /
   displayedReviews.length;
 
-function Stars({
+function StarRating({
   rating,
   className,
   size = "md",
@@ -33,7 +31,7 @@ function Stars({
   className?: string;
   size?: "sm" | "md";
 }) {
-  const starClass = size === "sm" ? "h-3.5 w-3.5" : "h-4 w-4";
+  const icon = size === "sm" ? "h-3.5 w-3.5" : "h-4 w-4";
   const filled = Math.round(rating);
 
   return (
@@ -46,30 +44,7 @@ function Stars({
           key={i}
           aria-hidden
           className={cn(
-            starClass,
-            i < filled
-              ? "fill-amber-400 text-amber-400"
-              : "fill-white/25 text-white/25"
-          )}
-        />
-      ))}
-    </div>
-  );
-}
-
-function StarsOnLight({ rating }: { rating: number }) {
-  const filled = Math.round(rating);
-  return (
-    <div
-      className="flex items-center gap-0.5"
-      aria-label={`${rating} out of 5 stars`}
-    >
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          aria-hidden
-          className={cn(
-            "h-4 w-4",
+            icon,
             i < filled
               ? "fill-amber-400 text-amber-400"
               : "fill-primary-100 text-primary-100"
@@ -80,31 +55,59 @@ function StarsOnLight({ rating }: { rating: number }) {
   );
 }
 
-function GoogleMark({ inverted = false }: { inverted?: boolean }) {
+function ReviewCard({
+  review,
+  className,
+}: {
+  review: (typeof displayedReviews)[number];
+  className?: string;
+}) {
   return (
-    <span
+    <article
       className={cn(
-        "inline-flex items-center gap-1.5 text-xs font-bold tracking-wide",
-        inverted ? "text-white/90" : "text-primary-950"
+        "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-primary-100/90 bg-white p-6 shadow-[0_12px_40px_rgba(53,0,20,0.05)] ring-1 ring-inset ring-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_22px_56px_rgba(122,1,31,0.1)] sm:p-7",
+        className
       )}
     >
-      <span
-        className={cn(
-          "flex h-7 w-7 items-center justify-center rounded-lg text-sm font-extrabold",
-          inverted ? "bg-white text-primary-900" : "bg-white shadow-sm ring-1 ring-primary-100"
-        )}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#7a011f] to-transparent opacity-80"
         aria-hidden
-      >
-        G
-      </span>
-      Google
-    </span>
+      />
+      <Quote
+        className="h-8 w-8 text-primary-200"
+        strokeWidth={1.25}
+        aria-hidden
+      />
+      <div className="mt-3 flex items-center justify-between gap-2">
+        <StarRating rating={review.rating} size="sm" />
+        <span className="text-xs font-bold tabular-nums text-[#7a011f]">
+          {review.rating.toFixed(review.rating % 1 === 0 ? 0 : 1)}
+        </span>
+      </div>
+      <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-7 text-body-text sm:text-base sm:leading-8">
+        &ldquo;{review.quote}&rdquo;
+      </blockquote>
+      <footer className="mt-6 flex items-center gap-3 border-t border-primary-50 pt-5">
+        <span
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#7a011f] to-primary-800 text-xs font-bold text-white shadow-[0_4px_14px_rgba(122,1,31,0.25)] ring-2 ring-white"
+          aria-hidden
+        >
+          {review.initials}
+        </span>
+        <div className="min-w-0">
+          <p className="truncate text-sm font-semibold text-primary-950">
+            {review.name}
+          </p>
+          <p className="truncate text-xs text-muted-foreground">
+            {review.role} · {review.location}
+          </p>
+        </div>
+      </footer>
+    </article>
   );
 }
 
 export function CustomerReviewsSection() {
-  if (!featuredReview) return null;
-
   return (
     <HomeSection
       id={customerReviewsSection.id}
@@ -114,110 +117,54 @@ export function CustomerReviewsSection() {
       className="overflow-hidden"
     >
       <Container className="relative">
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionHeading
-            align="center"
-            title={
-              <span className={sectionTitleStackClass}>
-                <span className="block">What Groups Say</span>
-                <SectionTitleAccent>About Go Coach</SectionTitleAccent>
-              </span>
-            }
-            description="Honest feedback from weddings, schools, sports teams, and corporate groups across Alberta."
-          />
-        </div>
+        <SectionHeading
+          align="center"
+          wide
+          className="mx-auto"
+          title={
+            <>
+              What Our
+              <SectionTitleAccent>Customers Say</SectionTitleAccent>
+            </>
+          }
+        />
 
         <div
-          className="mx-auto mt-10 flex max-w-4xl flex-col items-center justify-center gap-4 rounded-2xl border border-primary-100 bg-white px-6 py-5 shadow-[0_10px_36px_rgba(53,0,20,0.06)] sm:mt-12 sm:flex-row sm:justify-between sm:gap-8 sm:px-8"
-        >
-          <div className="flex items-center gap-4">
-            <p className="text-4xl font-semibold tracking-tight text-primary-950">
-              {averageRating.toFixed(1)}
-            </p>
-            <div className="text-left">
-              <StarsOnLight rating={averageRating} />
-              <p className="mt-1 text-sm text-muted-foreground">
-                Average from recent reviews
-              </p>
-            </div>
-          </div>
-          <div className="hidden h-10 w-px bg-primary-100 sm:block" aria-hidden />
-          <GoogleMark />
-        </div>
-
-        <article
-          className="relative mx-auto mt-8 max-w-5xl overflow-hidden rounded-[28px] bg-[#7a011f] px-6 py-8 text-white shadow-[0_20px_50px_rgba(122,1,31,0.22)] sm:mt-10 sm:px-10 sm:py-10 lg:px-12 lg:py-12"
+          className="mx-auto mt-10 max-w-6xl rounded-[32px] bg-gradient-to-br from-primary-100/40 via-white to-surface-blush p-[1px] shadow-[0_24px_64px_rgba(53,0,20,0.08)] sm:mt-14"
         >
           <div
-            className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"
-            aria-hidden
-          />
-          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-10">
-            <div className="shrink-0 lg:w-48">
-              <Stars rating={featuredReview.rating} />
-              <p className="mt-3 text-3xl font-semibold leading-none text-white/95">
-                {featuredReview.rating.toFixed(
-                  featuredReview.rating % 1 === 0 ? 0 : 1
-                )}
-                <span className="text-lg font-medium text-white/70"> / 5</span>
+            className="rounded-[31px] bg-white/90 p-6 backdrop-blur-sm sm:p-8 lg:flex lg:gap-10 lg:p-10 xl:gap-14 xl:p-12"
+          >
+            <aside
+              className="mb-8 flex flex-col items-center border-b border-primary-100 pb-8 text-center lg:mb-0 lg:w-[220px] lg:shrink-0 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-8 lg:text-left xl:w-[240px] xl:pr-10"
+            >
+              <p
+                className="text-5xl font-semibold tracking-tight text-primary-950 xl:text-6xl"
+              >
+                {averageRating.toFixed(1)}
               </p>
-              <GoogleMark inverted />
-            </div>
-            <div className="min-w-0 flex-1">
-              <blockquote className="text-lg leading-relaxed text-white/95 sm:text-xl sm:leading-8">
-                &ldquo;{featuredReview.quote}&rdquo;
-              </blockquote>
-              <footer className="mt-6 flex flex-wrap items-center gap-3 border-t border-white/20 pt-6">
-                <span
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-sm font-bold ring-2 ring-white/25"
-                  aria-hidden
-                >
-                  {featuredReview.initials}
-                </span>
-                <div>
-                  <p className="font-semibold">{featuredReview.name}</p>
-                  <p className="text-sm text-white/75">
-                    {featuredReview.role} · {featuredReview.location}
-                  </p>
-                </div>
-              </footer>
+              <StarRating rating={averageRating} className="mt-3" />
+              <p className="mt-2 text-sm font-medium text-muted-foreground">
+                Average guest rating
+              </p>
+              <ul className="mt-6 w-full space-y-3 text-sm text-body-text">
+                <li className="flex items-center justify-between gap-3 border-b border-primary-50 pb-3">
+                  <span>Groups served</span>
+                  <span className="font-semibold text-primary-950">1,000+</span>
+                </li>
+                <li className="flex items-center justify-between gap-3">
+                  <span>Serving Alberta</span>
+                  <span className="font-semibold text-[#7a011f]">Since 2013</span>
+                </li>
+              </ul>
+            </aside>
+
+            <div className="grid min-w-0 flex-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {displayedReviews.map((review) => (
+                <ReviewCard key={review.id} review={review} />
+              ))}
             </div>
           </div>
-        </article>
-
-        <div className="mx-auto mt-6 grid max-w-5xl gap-5 sm:grid-cols-2 sm:mt-8">
-          {supportingReviews.map((review) => (
-            <article
-              key={review.id}
-              className="flex flex-col rounded-2xl border border-primary-100 bg-white p-6 shadow-[0_8px_28px_rgba(53,0,20,0.05)] transition-shadow hover:shadow-[0_14px_40px_rgba(53,0,20,0.08)] sm:p-7"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <StarsOnLight rating={review.rating} />
-                <span className="text-xs font-semibold text-primary-800">
-                  {review.rating.toFixed(review.rating % 1 === 0 ? 0 : 1)}
-                </span>
-              </div>
-              <blockquote className="mt-4 flex-1 text-sm leading-7 text-body-text sm:text-[0.9375rem]">
-                &ldquo;{review.quote}&rdquo;
-              </blockquote>
-              <footer className="mt-5 flex items-center gap-3">
-                <span
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#7a011f] text-xs font-bold text-white"
-                  aria-hidden
-                >
-                  {review.initials}
-                </span>
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-primary-950">
-                    {review.name}
-                  </p>
-                  <p className="truncate text-xs text-muted-foreground">
-                    {review.location}
-                  </p>
-                </div>
-              </footer>
-            </article>
-          ))}
         </div>
 
         <div className="mt-10 flex justify-center sm:mt-12">
@@ -230,7 +177,7 @@ export function CustomerReviewsSection() {
               primaryButtonClass
             )}
           >
-            See all reviews on Google
+            Read more reviews
             <ArrowRight aria-hidden className="h-4 w-4" />
           </a>
         </div>

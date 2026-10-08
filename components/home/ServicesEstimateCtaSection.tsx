@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
+import { Badge } from "@/components/shared/Badge";
 import { Container } from "@/components/shared/Container";
 import { primaryButtonClass } from "@/lib/constants";
 import { siteMedia } from "@/lib/site-media";
@@ -30,6 +31,13 @@ export function ServicesEstimateCtaSection() {
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-primary-950/35 via-transparent to-primary-950/15"
       />
+
+      <Badge
+        tone="neutral"
+        className="absolute right-4 top-4 z-20 border border-white/40 bg-white/90 px-4 py-2 text-sm font-semibold text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:right-6 sm:top-6 lg:right-8 lg:top-8"
+      >
+        Should we add
+      </Badge>
 
       <Container className="relative">
         <div className="flex min-h-[420px] flex-col items-center justify-center gap-8 py-16 text-center sm:min-h-[460px] sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:text-left">
