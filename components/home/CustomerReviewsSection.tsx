@@ -20,7 +20,6 @@ const displayedReviews = reviews.slice(0, 3);
 
 const googleRating = 4.9;
 
-/** Google-style review star colors */
 const reviewStarFilledClass =
   "fill-[#FBBC04] text-[#FBBC04] stroke-[#FBBC04]";
 const reviewStarEmptyClass =
@@ -28,11 +27,7 @@ const reviewStarEmptyClass =
 
 function GoogleIcon({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      aria-hidden
-    >
+    <svg className={className} viewBox="0 0 24 24" aria-hidden>
       <path
         fill="#4285F4"
         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -60,34 +55,65 @@ function StarRating({
 }: {
   rating: number;
   className?: string;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg";
 }) {
   const icon =
     size === "sm"
       ? "h-3.5 w-3.5"
       : size === "lg"
-        ? "h-6 w-6 sm:h-7 sm:w-7"
-        : size === "xl"
-          ? "h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10"
-          : "h-4 w-4";
-  const filled = Math.round(rating);
+        ? "h-[1.35rem] w-[1.35rem] sm:h-6 sm:w-6"
+        : "h-4 w-4";
 
   return (
     <div
       className={cn("flex items-center gap-0.5", className)}
       aria-label={`${rating} out of 5 stars`}
     >
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          aria-hidden
-          strokeWidth={1.5}
-          className={cn(
-            icon,
-            i < filled ? reviewStarFilledClass : reviewStarEmptyClass
-          )}
-        />
-      ))}
+      {Array.from({ length: 5 }).map((_, i) => {
+        const fill = Math.min(1, Math.max(0, rating - i));
+
+        if (fill <= 0) {
+          return (
+            <Star
+              key={i}
+              aria-hidden
+              strokeWidth={1.5}
+              className={cn(icon, reviewStarEmptyClass)}
+            />
+          );
+        }
+
+        if (fill >= 1) {
+          return (
+            <Star
+              key={i}
+              aria-hidden
+              strokeWidth={1.5}
+              className={cn(icon, reviewStarFilledClass)}
+            />
+          );
+        }
+
+        return (
+          <span key={i} className={cn("relative inline-flex", icon)}>
+            <Star
+              aria-hidden
+              strokeWidth={1.5}
+              className={cn("h-full w-full", reviewStarEmptyClass)}
+            />
+            <span
+              className="absolute inset-0 overflow-hidden"
+              style={{ width: `${fill * 100}%` }}
+              aria-hidden
+            >
+              <Star
+                strokeWidth={1.5}
+                className={cn("h-full w-full", reviewStarFilledClass)}
+              />
+            </span>
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -102,7 +128,7 @@ function ReviewCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-primary-100/90 bg-white p-5 shadow-[0_12px_40px_rgba(53,0,20,0.05)] ring-1 ring-inset ring-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_22px_56px_rgba(122,1,31,0.1)] sm:rounded-[24px] sm:p-7",
+        "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-primary-100/90 bg-white p-6 shadow-[0_12px_40px_rgba(53,0,20,0.05)] ring-1 ring-inset ring-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_22px_56px_rgba(122,1,31,0.1)] sm:p-7",
         className
       )}
     >
@@ -121,9 +147,7 @@ function ReviewCard({
           {review.rating.toFixed(review.rating % 1 === 0 ? 0 : 1)}
         </span>
       </div>
-      <blockquote
-        className="mt-4 flex-1 text-sm leading-6 text-body-text sm:text-[0.9375rem] sm:leading-7 md:text-base md:leading-8"
-      >
+      <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-7 text-body-text sm:text-base sm:leading-8">
         &ldquo;{review.quote}&rdquo;
       </blockquote>
       <footer className="mt-6 flex items-center gap-3 border-t border-primary-50 pt-5">
@@ -169,33 +193,32 @@ export function CustomerReviewsSection() {
         />
 
         <div
-          className="mx-auto mt-8 max-w-6xl rounded-2xl bg-gradient-to-br from-primary-100/40 via-white to-surface-blush p-[1px] shadow-[0_24px_64px_rgba(53,0,20,0.08)] sm:mt-14 sm:rounded-[32px]"
+          className="mx-auto mt-10 max-w-6xl rounded-[32px] bg-gradient-to-br from-primary-100/40 via-white to-surface-blush p-[1px] shadow-[0_24px_64px_rgba(53,0,20,0.08)] sm:mt-14"
         >
           <div
-            className="rounded-[15px] bg-white/90 p-4 backdrop-blur-sm sm:rounded-[31px] sm:p-8 lg:flex lg:items-stretch lg:gap-8 lg:p-8 xl:gap-12 xl:p-10"
+            className="rounded-[31px] bg-white/90 p-6 backdrop-blur-sm sm:p-8 lg:flex lg:gap-10 lg:p-10 xl:gap-14 xl:p-12"
           >
             <aside
-              className="mb-6 flex min-h-[200px] flex-col items-center justify-center gap-4 border-b border-primary-100 px-2 py-8 text-center sm:mb-8 sm:min-h-[240px] sm:gap-5 sm:px-4 sm:py-10 lg:mb-0 lg:min-h-0 lg:w-[min(36%,280px)] lg:shrink-0 lg:self-stretch lg:border-b-0 lg:border-r lg:px-5 lg:py-6 xl:w-[min(32%,300px)] xl:px-6 xl:py-8"
+              className="mb-8 flex flex-col items-center justify-center border-b border-primary-100 pb-8 text-center lg:mb-0 lg:w-[220px] lg:shrink-0 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-8 xl:w-[240px] xl:pr-10"
               aria-label="Google rating"
             >
-              <GoogleIcon
-                className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 xl:h-[4.5rem] xl:w-[4.5rem]"
-              />
+              <GoogleIcon className="h-9 w-9 sm:h-10 sm:w-10" />
+              <p className="mt-3 text-sm font-semibold text-muted-foreground">
+                Google Reviews
+              </p>
               <p
-                className="text-5xl font-bold leading-none tracking-tight text-[#7a011f] sm:text-6xl lg:text-[3.5rem] xl:text-[4.5rem]"
+                className="mt-1 text-4xl font-bold leading-none tracking-tight text-[#E53935] sm:text-[2.75rem]"
               >
                 {googleRating.toFixed(1)}
               </p>
               <StarRating
                 rating={googleRating}
-                size="xl"
-                className="justify-center gap-1 sm:gap-1.5 lg:gap-2"
+                size="md"
+                className="mt-3 justify-center gap-1"
               />
             </aside>
 
-            <div
-              className="grid min-w-0 flex-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-1 lg:gap-5 xl:grid-cols-2 2xl:grid-cols-3"
-            >
+            <div className="grid min-w-0 flex-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-3">
               {displayedReviews.map((review) => (
                 <ReviewCard key={review.id} review={review} />
               ))}
@@ -209,7 +232,7 @@ export function CustomerReviewsSection() {
             target="_blank"
             rel="noreferrer"
             className={cn(
-              "min-h-12 w-full max-w-xs gap-2 px-8 py-3 text-sm font-semibold sm:w-auto sm:max-w-none",
+              "min-h-12 gap-2 px-8 py-3 text-sm font-semibold",
               primaryButtonClass
             )}
           >
