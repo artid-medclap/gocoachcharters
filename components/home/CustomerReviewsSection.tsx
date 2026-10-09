@@ -128,40 +128,37 @@ function ReviewCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-primary-100/90 bg-white p-6 shadow-[0_12px_40px_rgba(53,0,20,0.05)] ring-1 ring-inset ring-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_22px_56px_rgba(122,1,31,0.1)] sm:p-7",
+        "group relative flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-primary-100/90 bg-white p-4 shadow-[0_8px_28px_rgba(53,0,20,0.05)] ring-1 ring-inset ring-white transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-[0_14px_36px_rgba(122,1,31,0.08)] sm:p-5",
         className
       )}
     >
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#7a011f] to-transparent opacity-80"
+        className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-[#7a011f] to-transparent opacity-80"
         aria-hidden
       />
       <Quote
-        className="h-8 w-8 text-primary-200"
+        className="h-6 w-6 text-primary-200 sm:h-7 sm:w-7"
         strokeWidth={1.25}
         aria-hidden
       />
-      <div className="mt-3 flex items-center justify-between gap-2">
-        <StarRating rating={review.rating} size="sm" />
-        <span className="text-xs font-bold tabular-nums text-[#7a011f]">
-          {review.rating.toFixed(review.rating % 1 === 0 ? 0 : 1)}
-        </span>
-      </div>
-      <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-7 text-body-text sm:text-base sm:leading-8">
+      <StarRating rating={review.rating} size="sm" className="mt-2" />
+      <blockquote
+        className="mt-2.5 flex-1 text-sm leading-6 text-body-text line-clamp-6 sm:mt-3"
+      >
         &ldquo;{review.quote}&rdquo;
       </blockquote>
-      <footer className="mt-6 flex items-center gap-3 border-t border-primary-50 pt-5">
+      <footer className="mt-4 flex items-center gap-2.5 border-t border-primary-50 pt-3.5 sm:gap-3 sm:pt-4">
         <span
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#7a011f] to-primary-800 text-xs font-bold text-white shadow-[0_4px_14px_rgba(122,1,31,0.25)] ring-2 ring-white"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#7a011f] to-primary-800 text-[0.6875rem] font-bold text-white shadow-[0_3px_10px_rgba(122,1,31,0.22)] ring-2 ring-white"
           aria-hidden
         >
           {review.initials}
         </span>
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-primary-950">
+          <p className="truncate text-sm font-semibold leading-tight text-primary-950">
             {review.name}
           </p>
-          <p className="truncate text-xs text-muted-foreground">
+          <p className="truncate text-xs leading-snug text-muted-foreground">
             {review.role} · {review.location}
           </p>
         </div>
@@ -196,29 +193,31 @@ export function CustomerReviewsSection() {
           className="mx-auto mt-10 max-w-6xl rounded-[32px] bg-gradient-to-br from-primary-100/40 via-white to-surface-blush p-[1px] shadow-[0_24px_64px_rgba(53,0,20,0.08)] sm:mt-14"
         >
           <div
-            className="rounded-[31px] bg-white/90 p-6 backdrop-blur-sm sm:p-8 lg:flex lg:gap-10 lg:p-10 xl:gap-14 xl:p-12"
+            className="rounded-[31px] bg-white/90 p-4 backdrop-blur-sm sm:p-6 lg:flex lg:gap-8 lg:p-8 xl:gap-10 xl:p-9"
           >
             <aside
               className="mb-8 flex flex-col items-center justify-center border-b border-primary-100 pb-8 text-center lg:mb-0 lg:w-[220px] lg:shrink-0 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-8 xl:w-[240px] xl:pr-10"
               aria-label="Google rating"
             >
               <GoogleIcon className="h-9 w-9 sm:h-10 sm:w-10" />
-              <p className="mt-3 text-sm font-semibold text-muted-foreground">
+              <p className="mt-3 text-sm font-semibold text-primary-950">
                 Google Reviews
               </p>
               <p
-                className="mt-1 text-4xl font-bold leading-none tracking-tight text-[#E53935] sm:text-[2.75rem]"
+                className="mt-1 text-4xl font-bold leading-none tracking-tight text-[#7a011f] sm:text-[2.75rem]"
               >
                 {googleRating.toFixed(1)}
               </p>
               <StarRating
                 rating={googleRating}
-                size="md"
+                size="lg"
                 className="mt-3 justify-center gap-1"
               />
             </aside>
 
-            <div className="grid min-w-0 flex-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div
+              className="grid min-w-0 flex-1 auto-rows-fr items-stretch gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3"
+            >
               {displayedReviews.map((review) => (
                 <ReviewCard key={review.id} review={review} />
               ))}

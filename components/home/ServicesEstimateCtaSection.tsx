@@ -34,14 +34,14 @@ export function ServicesEstimateCtaSection() {
 
       <Badge
         tone="neutral"
-        className="absolute left-4 right-4 top-4 z-20 max-w-none border border-white/40 bg-white/90 px-3 py-2 text-left text-xs font-semibold leading-snug text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:left-auto sm:right-6 sm:top-6 sm:max-w-md sm:px-4 sm:text-sm lg:right-8 lg:top-8"
+        className="absolute left-4 top-4 z-20 max-w-[calc(100%-2rem)] border border-white/40 bg-white/90 px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:left-6 sm:top-6 sm:px-4 sm:py-2 sm:text-sm lg:left-8 lg:top-8"
       >
-        Should We Add An Average Charter Bus Cost Calculator Here For visitors?
+        Should We Add An Average Charter Bus Cost Calculator Here For Visitors?
       </Badge>
 
       <Container className="relative">
         <div
-          className="flex min-h-[min(420px,85dvh)] flex-col items-center justify-center gap-6 px-1 pb-8 pt-24 text-center sm:min-h-[460px] sm:gap-8 sm:px-0 sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:pt-20 lg:text-left"
+          className="flex min-h-[min(420px,85dvh)] flex-col items-center justify-center gap-6 px-1 py-16 text-center sm:min-h-[460px] sm:gap-8 sm:px-0 sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:text-left"
         >
           <div className="max-w-3xl">
             <h2 className={sectionTitleInvertedClass}>
