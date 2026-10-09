@@ -91,13 +91,13 @@ export function AmenitiesSection() {
         />
       </Container>
 
-      <div className="relative mt-10 w-full sm:mt-12 lg:mt-14">
+      <Container className="relative mt-10 sm:mt-12 lg:mt-14">
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-surface-blush from-40% to-transparent backdrop-blur-[1px] sm:w-16 lg:w-24"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-surface-blush from-0% via-surface-blush/85 via-45% to-transparent to-100% sm:w-20"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-surface-blush from-40% to-transparent backdrop-blur-[1px] sm:w-16 lg:w-24"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-surface-blush from-0% via-surface-blush/85 via-45% to-transparent to-100% sm:w-20"
           aria-hidden
         />
 
@@ -110,7 +110,7 @@ export function AmenitiesSection() {
             <FeatureSet duplicate />
           </div>
         </div>
-      </div>
+      </Container>
     </HomeSection>
   );
 }
