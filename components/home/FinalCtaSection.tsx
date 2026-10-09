@@ -15,7 +15,7 @@ export function FinalCtaSection() {
     <section
       id={finalCtaSection.id}
       aria-label={finalCtaSection.name}
-      className="relative isolate flex min-h-[280px] scroll-mt-[4.75rem] items-center justify-center overflow-hidden bg-primary-900 px-5 py-14 text-center text-white sm:min-h-[320px] sm:px-8 sm:py-16"
+      className="relative isolate flex min-h-[min(280px,70dvh)] scroll-mt-[4.75rem] items-center justify-center overflow-hidden bg-primary-900 px-4 py-12 text-center text-white sm:min-h-[320px] sm:px-8 sm:py-16"
     >
       <Image
         src={siteMedia.home.heroCityscape}
@@ -37,7 +37,7 @@ export function FinalCtaSection() {
         </p>
         <Link
           href="/booking"
-          className="group mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary-900 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-primary-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          className="group mt-6 inline-flex min-h-12 w-full max-w-xs items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary-900 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-primary-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:mt-7 sm:w-auto sm:max-w-none"
         >
           Request a Quote
           <ArrowRight

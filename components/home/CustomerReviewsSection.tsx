@@ -102,7 +102,7 @@ function ReviewCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-primary-100/90 bg-white p-6 shadow-[0_12px_40px_rgba(53,0,20,0.05)] ring-1 ring-inset ring-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_22px_56px_rgba(122,1,31,0.1)] sm:p-7",
+        "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-primary-100/90 bg-white p-5 shadow-[0_12px_40px_rgba(53,0,20,0.05)] ring-1 ring-inset ring-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_22px_56px_rgba(122,1,31,0.1)] sm:rounded-[24px] sm:p-7",
         className
       )}
     >
@@ -121,7 +121,9 @@ function ReviewCard({
           {review.rating.toFixed(review.rating % 1 === 0 ? 0 : 1)}
         </span>
       </div>
-      <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-7 text-body-text sm:text-base sm:leading-8">
+      <blockquote
+        className="mt-4 flex-1 text-sm leading-6 text-body-text sm:text-[0.9375rem] sm:leading-7 md:text-base md:leading-8"
+      >
         &ldquo;{review.quote}&rdquo;
       </blockquote>
       <footer className="mt-6 flex items-center gap-3 border-t border-primary-50 pt-5">
@@ -167,29 +169,33 @@ export function CustomerReviewsSection() {
         />
 
         <div
-          className="mx-auto mt-10 max-w-6xl rounded-[32px] bg-gradient-to-br from-primary-100/40 via-white to-surface-blush p-[1px] shadow-[0_24px_64px_rgba(53,0,20,0.08)] sm:mt-14"
+          className="mx-auto mt-8 max-w-6xl rounded-2xl bg-gradient-to-br from-primary-100/40 via-white to-surface-blush p-[1px] shadow-[0_24px_64px_rgba(53,0,20,0.08)] sm:mt-14 sm:rounded-[32px]"
         >
           <div
-            className="rounded-[31px] bg-white/90 p-6 backdrop-blur-sm sm:p-8 lg:flex lg:gap-10 lg:p-10 xl:gap-14 xl:p-12"
+            className="rounded-[15px] bg-white/90 p-4 backdrop-blur-sm sm:rounded-[31px] sm:p-8 lg:flex lg:items-stretch lg:gap-8 lg:p-8 xl:gap-12 xl:p-10"
           >
             <aside
-              className="mb-8 flex min-h-[240px] flex-col items-center justify-center gap-5 border-b border-primary-100 px-4 py-10 text-center sm:min-h-[260px] sm:gap-6 sm:py-12 lg:mb-0 lg:min-h-0 lg:w-[min(32%,300px)] lg:shrink-0 lg:self-stretch lg:border-b-0 lg:border-r lg:px-6 lg:py-8 xl:w-[min(30%,320px)] xl:px-8 xl:py-10"
+              className="mb-6 flex min-h-[200px] flex-col items-center justify-center gap-4 border-b border-primary-100 px-2 py-8 text-center sm:mb-8 sm:min-h-[240px] sm:gap-5 sm:px-4 sm:py-10 lg:mb-0 lg:min-h-0 lg:w-[min(36%,280px)] lg:shrink-0 lg:self-stretch lg:border-b-0 lg:border-r lg:px-5 lg:py-6 xl:w-[min(32%,300px)] xl:px-6 xl:py-8"
               aria-label="Google rating"
             >
-              <GoogleIcon className="h-14 w-14 sm:h-16 sm:w-16 lg:h-[4.75rem] lg:w-[4.75rem]" />
+              <GoogleIcon
+                className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 xl:h-[4.5rem] xl:w-[4.5rem]"
+              />
               <p
-                className="text-6xl font-bold leading-none tracking-tight text-[#7a011f] sm:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]"
+                className="text-5xl font-bold leading-none tracking-tight text-[#7a011f] sm:text-6xl lg:text-[3.5rem] xl:text-[4.5rem]"
               >
                 {googleRating.toFixed(1)}
               </p>
               <StarRating
                 rating={googleRating}
                 size="xl"
-                className="justify-center gap-1.5 sm:gap-2"
+                className="justify-center gap-1 sm:gap-1.5 lg:gap-2"
               />
             </aside>
 
-            <div className="grid min-w-0 flex-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div
+              className="grid min-w-0 flex-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-1 lg:gap-5 xl:grid-cols-2 2xl:grid-cols-3"
+            >
               {displayedReviews.map((review) => (
                 <ReviewCard key={review.id} review={review} />
               ))}
@@ -203,7 +209,7 @@ export function CustomerReviewsSection() {
             target="_blank"
             rel="noreferrer"
             className={cn(
-              "min-h-12 gap-2 px-8 py-3 text-sm font-semibold",
+              "min-h-12 w-full max-w-xs gap-2 px-8 py-3 text-sm font-semibold sm:w-auto sm:max-w-none",
               primaryButtonClass
             )}
           >

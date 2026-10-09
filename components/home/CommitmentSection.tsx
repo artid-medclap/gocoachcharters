@@ -26,14 +26,18 @@ export function CommitmentSection() {
       className="overflow-hidden"
     >
       <Container className="relative max-w-[90rem]">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div className="relative isolate min-w-0 w-full">
             <CommitmentSectionCarousel />
           </div>
 
-          <div className="relative z-10 flex min-w-0 flex-col justify-center py-2 lg:py-0 lg:pl-2">
+          <div
+            className="relative z-10 flex min-w-0 flex-col justify-center py-2 text-center lg:py-0 lg:pl-2 lg:text-left"
+          >
             <SectionHeading
               align="left"
+              className="mx-auto w-full text-center lg:mx-0 lg:text-left"
+              headingClassName="text-center lg:text-left"
               title={
                 <span className={sectionTitleStackClass}>
                   <span className="block">Edmonton’s Local</span>
@@ -44,7 +48,7 @@ export function CommitmentSection() {
             />
 
             <div
-              className={`mt-2 space-y-4 sm:mt-3 sm:space-y-4 ${sectionBodyTextClass}`}
+              className={`mx-auto mt-2 max-w-prose space-y-4 text-left sm:mt-3 sm:space-y-4 lg:mx-0 ${sectionBodyTextClass}`}
             >
               <p>
                 Go Coach Charters has been providing reliable group
@@ -69,7 +73,11 @@ export function CommitmentSection() {
 
             <Link
               href="/about-us/"
-              className={cn("group mt-7 sm:mt-8", primaryButtonClass, "min-h-12 px-6 py-3 text-sm")}
+              className={cn(
+                "group mx-auto mt-7 w-full max-w-md sm:mt-8 lg:mx-0 lg:w-auto lg:max-w-none",
+                primaryButtonClass,
+                "min-h-12 px-5 py-3 text-center text-sm sm:px-6"
+              )}
             >
               Learn More About Go Coach Charters
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">

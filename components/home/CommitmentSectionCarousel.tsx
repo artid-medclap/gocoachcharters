@@ -70,8 +70,8 @@ export function CommitmentSectionCarousel() {
   return (
     <div
       className={cn(
-        "relative min-h-[380px] overflow-hidden bg-primary-950 sm:min-h-[460px] lg:min-h-[540px]",
-        "rounded-[28px] shadow-[0_24px_60px_rgba(53,0,20,0.18)] ring-1 ring-primary-100/80"
+        "relative min-h-[min(380px,72vw)] overflow-hidden bg-primary-950 sm:min-h-[460px] lg:min-h-[540px]",
+        "rounded-2xl shadow-[0_24px_60px_rgba(53,0,20,0.18)] ring-1 ring-primary-100/80 sm:rounded-[28px]"
       )}
     >
       {SLIDES.map((slide, index) => (

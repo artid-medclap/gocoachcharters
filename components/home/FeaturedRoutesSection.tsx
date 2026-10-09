@@ -96,11 +96,15 @@ export function FeaturedRoutesSection() {
       className="overflow-hidden border-b border-primary-100/90"
     >
       <Container className="relative">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
+        <div
+          className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12"
+        >
           {/* LEFT CONTENT */}
-          <div className="relative z-10">
+          <div className="relative z-10 text-center lg:text-left">
             <SectionHeading
               align="left"
+              className="mx-auto w-full text-center lg:mx-0 lg:text-left"
+              headingClassName="text-center lg:text-left"
               title={
                 <>
                   Charter Bus Service
@@ -110,7 +114,9 @@ export function FeaturedRoutesSection() {
               description="Share your trip details with Go Coach Charters and book your charter bus now."
             />
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div
+              className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:items-start lg:justify-start"
+            >
               <Link
                 href={homeSections.getStarted}
                 className={cn("group min-h-12 gap-2 px-6 text-sm", primaryButtonClass)}
@@ -126,7 +132,9 @@ export function FeaturedRoutesSection() {
           </div>
 
           {/* MAP */}
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-[760px]">
+          <div
+            className="relative mx-auto aspect-[4/3] w-full min-w-0 max-w-[760px]"
+          >
               <svg
                 className="absolute inset-0 h-full w-full"
                 viewBox="0 0 700 525"
@@ -313,7 +321,7 @@ export function FeaturedRoutesSection() {
                     <span className="pointer-events-none absolute bottom-0 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-primary-300/35 opacity-0 transition-all duration-200 group-hover:scale-150 group-hover:opacity-100 group-focus-visible:scale-150 group-focus-visible:opacity-100" />
 
                     <MapPin
-                      className="relative h-9 w-9 fill-primary-300 text-primary-900 drop-shadow-[0_4px_10px_rgba(53,0,20,0.35)] transition-transform duration-200 group-hover:scale-110 group-focus-visible:scale-110 sm:h-10 sm:w-10"
+                      className="relative h-7 w-7 fill-primary-300 text-primary-900 drop-shadow-[0_4px_10px_rgba(53,0,20,0.35)] transition-transform duration-200 group-hover:scale-110 group-focus-visible:scale-110 min-[400px]:h-8 min-[400px]:w-8 sm:h-10 sm:w-10"
                       strokeWidth={1.75}
                       aria-hidden="true"
                     />

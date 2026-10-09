@@ -10,8 +10,8 @@ export const bodyTextSmClass =
 /** Primary section titles (h2) — homepage sections */
 export const sectionTitleClass = cn(
   "text-balance font-semibold tracking-[-0.03em]",
-  "text-3xl sm:text-4xl lg:text-5xl",
-  "leading-[1.1] sm:leading-[1.08] lg:leading-[1.06]"
+  "text-[1.625rem] min-[400px]:text-3xl sm:text-4xl lg:text-5xl",
+  "leading-[1.12] min-[400px]:leading-[1.1] sm:leading-[1.08] lg:leading-[1.06]"
 );
 
 /** Trust bar & secondary band titles */
@@ -29,8 +29,8 @@ export const sectionTitleInvertedClass = cn(
 
 /** Hero h1 — tight kerning + default word gaps (see route card overlays) */
 export const heroTitleClass = cn(
-  "text-balance font-medium leading-[1.08] tracking-[-0.02em] [word-spacing:normal]",
-  "text-5xl sm:text-6xl lg:text-7xl xl:text-[5rem]",
+  "text-balance font-medium leading-[1.1] tracking-[-0.02em] [word-spacing:normal]",
+  "text-[2rem] min-[400px]:text-4xl sm:text-6xl lg:text-7xl xl:text-[5rem]",
   "text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]"
 );
 

@@ -34,13 +34,15 @@ export function ServicesEstimateCtaSection() {
 
       <Badge
         tone="neutral"
-        className="absolute right-4 top-4 z-20 border border-white/40 bg-white/90 px-4 py-2 text-sm font-semibold text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:right-6 sm:top-6 lg:right-8 lg:top-8"
+        className="absolute left-4 right-4 top-4 z-20 max-w-none border border-white/40 bg-white/90 px-3 py-2 text-left text-xs font-semibold leading-snug text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:left-auto sm:right-6 sm:top-6 sm:max-w-md sm:px-4 sm:text-sm lg:right-8 lg:top-8"
       >
         Should we add an Average Charter Bus Cost Calculator here for visitors
       </Badge>
 
       <Container className="relative">
-        <div className="flex min-h-[420px] flex-col items-center justify-center gap-8 py-16 text-center sm:min-h-[460px] sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:text-left">
+        <div
+          className="flex min-h-[min(420px,85dvh)] flex-col items-center justify-center gap-6 px-1 pb-8 pt-24 text-center sm:min-h-[460px] sm:gap-8 sm:px-0 sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:pt-20 lg:text-left"
+        >
           <div className="max-w-3xl">
             <h2 className={sectionTitleInvertedClass}>
               Get an Estimate for Your{" "}
@@ -57,7 +59,7 @@ export function ServicesEstimateCtaSection() {
             <button
               type="button"
               className={cn(
-                "group min-h-16 cursor-default gap-4 px-8 py-5 text-sm font-extrabold uppercase tracking-[0.05em] sm:min-w-[340px] sm:px-10",
+                "group min-h-14 w-full max-w-md cursor-default gap-3 px-6 py-4 text-xs font-extrabold uppercase tracking-[0.04em] sm:min-h-16 sm:w-auto sm:min-w-[300px] sm:gap-4 sm:px-10 sm:py-5 sm:text-sm sm:tracking-[0.05em] md:min-w-[340px]",
                 primaryButtonClass
               )}
             >

@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 export type HomeSectionTone = "white" | "blush" | "muted" | "brand";
 
 /** Shared vertical rhythm for all homepage sections */
-export const HOME_SECTION_PADDING = "py-16 sm:py-20 lg:py-24";
+export const HOME_SECTION_PADDING =
+  "py-12 sm:py-16 md:py-20 lg:py-24";
 
 const toneStyles: Record<HomeSectionTone, string> = {
   white: "bg-white",

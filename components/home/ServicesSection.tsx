@@ -84,7 +84,9 @@ export function ServicesSection() {
           }
         />
 
-        <div className="mx-auto mt-10 grid max-w-7xl items-stretch gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3">
+        <div
+          className="mx-auto mt-8 grid max-w-7xl min-w-0 items-stretch gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3"
+        >
           {GROUPS.map((group) => (
             <Link
               key={group.title}

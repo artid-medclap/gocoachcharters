@@ -40,7 +40,9 @@ export function FleetShowcaseSection() {
           description="Find a comfortable ride for your group size, travel plans, and destination."
         />
 
-        <div className="mx-auto mt-10 grid max-w-7xl gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div
+          className="mx-auto mt-8 grid max-w-7xl min-w-0 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3"
+        >
           {fleet.map((vehicle) => (
             <article
               key={vehicle.name}

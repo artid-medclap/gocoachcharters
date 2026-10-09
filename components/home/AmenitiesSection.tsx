@@ -81,7 +81,7 @@ export function AmenitiesSection() {
           wide
           className="mx-auto"
           title={
-            <span className="inline-block whitespace-nowrap">
+            <span className="inline-block text-balance">
               What&apos;s On{" "}
               <SectionTitleAccent className="!inline !mt-0">
                 Board?
