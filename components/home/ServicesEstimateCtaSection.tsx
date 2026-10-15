@@ -43,7 +43,7 @@ export function ServicesEstimateCtaSection() {
         <div
           className="flex min-h-[min(420px,85dvh)] flex-col items-center justify-center gap-6 px-1 py-16 text-center sm:min-h-[460px] sm:gap-8 sm:px-0 sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:text-left"
         >
-          <div className="max-w-3xl">
+          <div className="max-w-3xl capitalize">
             <h2 className={sectionTitleInvertedClass}>
               Get an Estimate for Your{" "}
               <span className="text-primary-100">Charter Bus Rental</span>

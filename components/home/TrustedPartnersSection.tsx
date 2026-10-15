@@ -58,7 +58,7 @@ export function TrustedPartnersSection() {
       aria-label={trustedPartnersSection.name}
     >
       <HomeSectionDecor />
-      <Container className="relative mb-6 sm:mb-10 lg:mb-16">
+      <Container className="relative mb-6 sm:mb-10 lg:mb-16 capitalize">
         <SectionHeading
           align="center"
           size="compact"

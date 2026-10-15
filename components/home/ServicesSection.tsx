@@ -79,7 +79,7 @@ export function ServicesSection() {
           title={
             <span className={sectionTitleStackClass}>
               <span className="block text-foreground">Charter Bus Services</span>
-              <SectionTitleAccent>for Every Kind of Group</SectionTitleAccent>
+              <SectionTitleAccent>For Every Kind of Group</SectionTitleAccent>
             </span>
           }
         />

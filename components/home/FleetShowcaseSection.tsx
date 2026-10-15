@@ -30,7 +30,7 @@ export function FleetShowcaseSection() {
         <SectionHeading
           align="center"
           wide
-          className="mx-auto"
+          className="mx-auto capitalize"
           title={
             <>
               Choose the Right Coach
