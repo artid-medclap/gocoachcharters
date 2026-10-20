@@ -67,7 +67,7 @@ export function CommitmentSection() {
               events, tours, and long-distance group travel. 
               These buses offer comfortable seating, luggage space,
               and select onboard amenities,
-               including Wi-Fi and onboard washrooms.
+              including Wi-Fi and onboard washrooms.
               </p>
             </div>
 

@@ -54,11 +54,13 @@ function FeatureSet({ duplicate = false }: { duplicate?: boolean }) {
                 aria-hidden
               />
             </span>
-            <h3
-              className="line-clamp-2 text-[0.8125rem] font-bold leading-snug tracking-[-0.01em] text-primary-950 min-[400px]:text-[0.9375rem] sm:text-base lg:text-[1.0625rem]"
-            >
-              {title}
-            </h3>
+           
+              <h3
+                className="text-[0.725rem] font-bold leading-sung tracking-[-0.01em] text-primary-950 break-words min-[400px]:text-[0.175rem] sm:text-base lg:text-[0.9375rem]"
+              >
+                {title}
+              </h3>
+
           </article>
         </li>
       ))}

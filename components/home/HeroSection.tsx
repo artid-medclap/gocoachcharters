@@ -86,13 +86,17 @@ export function HeroSection() {
         aria-hidden
       />
 
-      <Container
-        className={cn(
-          "relative z-10 flex flex-col items-center",
-          "px-4 pt-[calc(4.5rem+env(safe-area-inset-top,0px))] pb-10 sm:pt-20 sm:pb-12",
-          "lg:min-h-[min(92vh,880px)] lg:justify-center lg:pb-44 lg:pt-16 xl:pb-48"
-        )}
-      >
+
+   
+<Container
+  className={cn(
+    "relative z-10 flex flex-col items-center",
+    "px-4 pt-[calc(6.5rem+env(safe-area-inset-top,0px))] pb-10 sm:pt-28 sm:pb-12",
+    "lg:min-h-[min(92vh,880px)] lg:justify-center lg:pb-28 lg:pt-24 xl:pb-32"
+  )}
+>
+
+
         <div
           className={cn(
             "flex w-full max-w-6xl flex-col items-center text-center lg:px-6 xl:px-10"
@@ -137,7 +141,7 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden px-4 pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] lg:block lg:px-6"
       >
         {/* <Container className="pointer-events-auto max-w-6xl px-0"> */}
-          {/* <HeroTrustBar /> */}
+        {/* <HeroTrustBar /> */}
         {/* </Container> */}
       </div>
     </section>

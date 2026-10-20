@@ -108,7 +108,7 @@ export function FeaturedRoutesSection() {
               title={
                 <>
                   Charter Bus Service
-                  <SectionTitleAccent>Across Alberta</SectionTitleAccent>
+                  <SectionTitleAccent>Across Canada</SectionTitleAccent>
                 </>
               }
               description="Share your trip details with Go Coach Charters and book your charter bus now."
