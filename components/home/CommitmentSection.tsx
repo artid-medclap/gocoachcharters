@@ -51,23 +51,23 @@ export function CommitmentSection() {
               className={`mx-auto mt-2 max-w-prose space-y-4 text-left sm:mt-3 sm:space-y-4 lg:mx-0 ${sectionBodyTextClass}`}
             >
               <p>
-                Go Coach Charters has been providing reliable group
-                transportation across Alberta and Western Canada since 2013. We
-                offer charter bus rental for school trips, corporate travel,
-                sports teams, family outings, events, and long-distance
-                journeys.
+              Go Coach Charters has been providing reliable group transportation across 
+              Alberta and Western Canada since 2013.
+               We offer charter bus rentals for school trips, corporate travel, sports teams, 
+               family outings, events, and long-distance journeys.
               </p>
               <p>
-                With 13+ years of experience and more than 1,000 groups served,
-                our team understands the importance of reliable service and
-                safety. Our professional drivers and well-maintained coaches
-                help groups travel comfortably and with confidence.
+              With 13+ years of experience and more than 1,000 groups served, 
+              our team understands the importance of reliable service and safety.
+              Our professional drivers and well-maintained coaches help groups 
+              travel comfortably and with confidence.
               </p>
               <p>
-                We offer 56-passenger motorcoach and minibus rentals for local
-                trips, events, tours, and long-distance group travel. These
-                buses offer comfortable seating, luggage space, and select
-                onboard amenities, including Wi-Fi and onboard washrooms.
+              We offer luxury motorcoach and mini coach rentals for local trips, 
+              events, tours, and long-distance group travel. 
+              These buses offer comfortable seating, luggage space,
+              and select onboard amenities,
+               including Wi-Fi and onboard washrooms.
               </p>
             </div>
 

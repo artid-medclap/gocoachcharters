@@ -297,7 +297,6 @@ export function GallerySection() {
             "
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button
               type="button"
               onClick={() => setSelectedItem(null)}
@@ -313,7 +312,6 @@ export function GallerySection() {
               <X className="h-5 w-5" />
             </button>
 
-            {/* Modal Image */}
             <div className="relative aspect-[16/10] w-full bg-black">
               <Image
                 src={selectedItem.image}
@@ -324,7 +322,6 @@ export function GallerySection() {
               />
             </div>
 
-            {/* Modal Details */}
             <div className="p-6 sm:p-8">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>

@@ -4,7 +4,7 @@ import { CalendarCheck, ShieldCheck, UserRoundCheck, UsersRound } from "lucide-r
 
 import { Container } from "@/components/shared/Container";
 import { homeSections } from "@/data/navigation";
-import { heroTrustBarSurfaceClass, primaryButtonClass } from "@/lib/constants";
+import { primaryButtonClass } from "@/lib/constants";
 import { homeSectionMeta } from "@/lib/home-sections";
 import { siteMedia } from "@/lib/site-media";
 import { heroTitleClass } from "@/lib/typography";
@@ -25,46 +25,46 @@ const assuranceIconClass =
 const assuranceTextClass =
   "text-left text-[0.75rem] font-semibold leading-[1.2] text-primary-950 min-[400px]:text-[0.8125rem] sm:text-sm sm:leading-[1.25]";
 
-function HeroTrustBar({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "overflow-hidden rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem]",
-        heroTrustBarSurfaceClass,
-        className
-      )}
-      role="list"
-      aria-label="Why book with Go Coach"
-    >
-      <div
-        className="grid grid-cols-2 divide-x divide-y divide-primary-200/70 lg:grid-cols-4 lg:divide-y-0"
-      >
-        {assurances.map(({ icon: Icon, lines }) => (
-          <div
-            key={lines.join(" ")}
-            role="listitem"
-            className="flex items-center justify-center gap-1.5 px-2 py-3 min-[400px]:gap-2 min-[400px]:px-3 min-[400px]:py-3.5 sm:gap-3 sm:px-5 sm:py-5 lg:gap-3.5 lg:px-6 lg:py-6"
-          >
-            <div className={assuranceIconClass}>
-              <Icon
-                className="h-[1.15rem] w-[1.15rem] text-primary-900 min-[400px]:h-[1.35rem] min-[400px]:w-[1.35rem] sm:h-6 sm:w-6"
-                strokeWidth={2.35}
-                aria-hidden
-              />
-            </div>
-            <p className={`${assuranceTextClass} min-w-0`}>
-              {lines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+// function HeroTrustBar({ className }: { className?: string }) {
+//   return (
+//     <div
+//       className={cn(
+//         "overflow-hidden rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem]",
+//         heroTrustBarSurfaceClass,
+//         className
+//       )}
+//       role="list"
+//       aria-label="Why book with Go Coach"
+//     >
+//       <div
+//         className="grid grid-cols-2 divide-x divide-y divide-primary-200/70 lg:grid-cols-4 lg:divide-y-0"
+//       >
+//         {assurances.map(({ icon: Icon, lines }) => (
+//           <div
+//             key={lines.join(" ")}
+//             role="listitem"
+//             className="flex items-center justify-center gap-1.5 px-2 py-3 min-[400px]:gap-2 min-[400px]:px-3 min-[400px]:py-3.5 sm:gap-3 sm:px-5 sm:py-5 lg:gap-3.5 lg:px-6 lg:py-6"
+//           >
+//             <div className={assuranceIconClass}>
+//               <Icon
+//                 className="h-[1.15rem] w-[1.15rem] text-primary-900 min-[400px]:h-[1.35rem] min-[400px]:w-[1.35rem] sm:h-6 sm:w-6"
+//                 strokeWidth={2.35}
+//                 aria-hidden
+//               />
+//             </div>
+//             <p className={`${assuranceTextClass} min-w-0`}>
+//               {lines.map((line) => (
+//                 <span key={line} className="block">
+//                   {line}
+//                 </span>
+//               ))}
+//             </p>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
 export function HeroSection() {
   return (
@@ -89,7 +89,7 @@ export function HeroSection() {
       <Container
         className={cn(
           "relative z-10 flex flex-col items-center",
-          "px-3 pt-[calc(4.5rem+env(safe-area-inset-top,0px))] pb-10 sm:px-4 sm:pt-20 sm:pb-12",
+          "px-4 pt-[calc(4.5rem+env(safe-area-inset-top,0px))] pb-10 sm:pt-20 sm:pb-12",
           "lg:min-h-[min(92vh,880px)] lg:justify-center lg:pb-44 lg:pt-16 xl:pb-48"
         )}
       >
@@ -122,23 +122,23 @@ export function HeroSection() {
                   alt=""
                   width={50}
                   height={50}
-                  className="h-8 w-8 object-contain sm:h-9 sm:w-9"
+                  className="h-8 w-8 mt-3 mb-3 object-contain sm:h-8 sm:w-8"
                 />
                 Request a Quote
               </Link>
             </div>
           </div>
 
-          <HeroTrustBar className="mt-6 w-full sm:mt-8 lg:hidden" />
+          {/* <HeroTrustBar className="mt-6 w-full sm:mt-8 lg:hidden" /> */}
         </div>
       </Container>
 
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden px-4 pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] lg:block lg:px-6"
       >
-        <Container className="pointer-events-auto max-w-6xl px-0">
-          <HeroTrustBar />
-        </Container>
+        {/* <Container className="pointer-events-auto max-w-6xl px-0"> */}
+          {/* <HeroTrustBar /> */}
+        {/* </Container> */}
       </div>
     </section>
   );

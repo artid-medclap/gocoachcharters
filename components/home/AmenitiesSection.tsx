@@ -23,12 +23,12 @@ const ONBOARD_FEATURES: { icon: LucideIcon; title: string }[] = [
   { icon: Snowflake, title: "Climate Control" },
   { icon: Bath, title: "Onboard Restrooms" },
   { icon: Luggage, title: "Overhead Luggage Storage" },
-  { icon: Zap, title: "110V Power Sockets" },
+  { icon: Zap, title: "110 Power Outlets" },
   { icon: Wifi, title: "Wi-Fi" },
   { icon: Coffee, title: "Cup Holders" },
-  { icon: MonitorPlay, title: "Multiple Screens" },
+  { icon: MonitorPlay, title: "Multi Screen Entertainment System" },
   { icon: MapPinCheck, title: "Live Bus Tracking with ETA" },
-  { icon: Armchair, title: "Push Reclining Seats" },
+  { icon: Armchair, title: "Plus Reclining Seat " },
 ];
 
 export const amenitiesSection = homeSectionMeta.amenities;
@@ -55,7 +55,7 @@ function FeatureSet({ duplicate = false }: { duplicate?: boolean }) {
               />
             </span>
             <h3
-              className="line-clamp-2 text-[0.9375rem] font-bold leading-snug tracking-[-0.01em] text-primary-950 sm:text-base lg:text-[1.0625rem]"
+              className="line-clamp-2 text-[0.8125rem] font-bold leading-snug tracking-[-0.01em] text-primary-950 min-[400px]:text-[0.9375rem] sm:text-base lg:text-[1.0625rem]"
             >
               {title}
             </h3>

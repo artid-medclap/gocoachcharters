@@ -204,7 +204,7 @@ export function CustomerReviewsSection() {
                 Google Reviews
               </p>
               <p
-                className="mt-1 text-4xl font-bold leading-none tracking-tight text-[#7a011f] sm:text-[2.75rem]"
+                className="mt-1 text-3xl font-bold leading-none tracking-tight text-[#7a011f] min-[400px]:text-4xl sm:text-[2.75rem]"
               >
                 {googleRating.toFixed(1)}
               </p>

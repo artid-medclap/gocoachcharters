@@ -50,7 +50,7 @@ const GROUPS = [
     image: siteMedia.services.charterCoach,
     title: "Church & Religious Groups",
     description:
-      "Charter bus transportation for church groups, pilgrimages, and faith-based events, with comfortable travel for groups of all sizes.",
+      "Charter bus transportation for church groups, pilgrimages, and faith-based events, with comfortable travel options for groups of all sizes.",
     imageAlt: "Charter coach ready for a group trip",
   },
   {
@@ -117,13 +117,15 @@ export function ServicesSection() {
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col items-center px-5 py-5 text-center sm:px-6 sm:py-6">
+              <div
+                className="flex flex-1 flex-col items-center px-4 py-4 text-center sm:px-6 sm:py-6"
+              >
                 <h3
                   className={`${sectionCardTitleClass} transition-colors group-hover:text-primary-700`}
                 >
                   {group.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-6 text-body-text">
+                <p className="mt-2 flex-1 text-[0.8125rem] leading-5 text-body-text sm:text-sm sm:leading-6">
                   {group.description}
                 </p>
                 <span

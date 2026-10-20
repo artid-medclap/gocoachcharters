@@ -102,10 +102,12 @@ export default function GalleryPage() {
                   {category}
                   {category === "All" && (
                     <span
-                      className={`
-                        ml-1 rounded-full px-1.5 py-0.5 text-[10px]
-                        ${isActive ? "bg-white/20 text-white" : "bg-primary-100 text-primary-900"}
-                      `}
+                      className={cn(
+                        "ml-0.5 min-w-[1.25rem] rounded-full px-1.5 py-0.5 text-center text-[10px] font-bold tabular-nums",
+                        isActive
+                          ? "bg-primary-900 text-white"
+                          : "bg-primary-100 text-primary-900"
+                      )}
                     >
                       {allGalleryItems.length}
                     </span>

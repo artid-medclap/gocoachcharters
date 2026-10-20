@@ -24,7 +24,7 @@ function LogoSet({ duplicate = false }: { duplicate?: boolean }) {
       {TRUST_LOGOS.map((logo, index) => (
         <div
           key={`${duplicate ? "duplicate" : "original"}-${logo.src}-${index}`}
-          className="flex w-[145px] shrink-0 flex-col items-center sm:w-[170px] lg:w-[185px]"
+          className="flex w-[120px] shrink-0 flex-col items-center min-[400px]:w-[145px] sm:w-[170px] lg:w-[185px]"
         >
           <div className="flex h-16 w-full items-center justify-center sm:h-[4.5rem] lg:h-20">
             <Image
@@ -33,11 +33,11 @@ function LogoSet({ duplicate = false }: { duplicate?: boolean }) {
               aria-hidden={duplicate}
               width={280}
               height={150}
-              className="h-auto max-h-16 w-auto max-w-[145px] object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 sm:max-h-[4.5rem] sm:max-w-[170px] lg:max-h-20 lg:max-w-[185px]"
+              className="h-auto max-h-14 w-auto max-w-[120px] object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 min-[400px]:max-h-16 min-[400px]:max-w-[145px] sm:max-h-[4.5rem] sm:max-w-[170px] lg:max-h-20 lg:max-w-[185px]"
             />
           </div>
           <span
-            className="mt-2 min-h-10 max-w-full text-center text-sm font-semibold leading-5 text-primary-900/80 sm:text-base"
+            className="mt-2 min-h-10 max-w-full text-center text-xs font-semibold leading-4 text-primary-900/80 min-[400px]:text-sm min-[400px]:leading-5 sm:text-base"
             aria-hidden={duplicate}
           >
             {logo.alt}

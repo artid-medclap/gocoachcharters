@@ -101,7 +101,7 @@ export function SectionHeading({
     <p
       className={cn(
         sectionBodyTextClass,
-        "mt-4 sm:mt-5",
+        "mt-3 text-pretty sm:mt-4 md:mt-5",
         isInverted ? "!text-white/75" : undefined,
         isCenter && "mx-auto max-w-2xl",
         isSplit && "max-w-md lg:mt-0",

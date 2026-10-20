@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { HeroSection } from "@/components/home/HeroSection";
+import { getHomePageJsonLd } from "@/lib/schema/home-page-json-ld";
 import { TrustedPartnersSection } from "@/components/home/TrustedPartnersSection";
 import { FleetShowcaseSection } from "@/components/home/FleetShowcaseSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
@@ -22,10 +24,13 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const homePageJsonLd = getHomePageJsonLd();
+
   return (
     <main className="flex min-w-0 flex-col overflow-x-clip bg-white">
+      <JsonLd data={homePageJsonLd} />
       <HeroSection />
-      <TrustedPartnersSection />
+      {/* <TrustedPartnersSection /> */}
       <CommitmentSection />
       {/* <WhyChooseCharterSection /> */}
       <ServicesSection />

@@ -34,14 +34,14 @@ export function ServicesEstimateCtaSection() {
 
       <Badge
         tone="neutral"
-        className="absolute left-4 top-4 z-20 max-w-[calc(100%-2rem)] border border-white/40 bg-white/90 px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:left-6 sm:top-6 sm:px-4 sm:py-2 sm:text-sm lg:left-8 lg:top-8"
+        className="absolute left-4 top-4 z-20 w-fit max-w-[calc(100%-2rem)] border border-white/40 bg-white/90 px-3 py-1.5 text-[0.6875rem] font-semibold leading-snug text-primary-900 shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-sm min-[400px]:px-4 min-[400px]:text-xs min-[400px]:leading-normal sm:left-6 sm:top-6 sm:max-w-[calc(100%-3rem)] sm:px-4 sm:py-2 sm:text-sm md:max-w-none md:whitespace-nowrap lg:left-8 lg:top-8"
       >
         Should We Add An Average Charter Bus Cost Calculator Here For Visitors?
       </Badge>
 
       <Container className="relative">
         <div
-          className="flex min-h-[min(420px,85dvh)] flex-col items-center justify-center gap-6 px-1 py-16 text-center sm:min-h-[460px] sm:gap-8 sm:px-0 sm:py-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:text-left"
+          className="flex min-h-[min(420px,85dvh)] flex-col items-center justify-center gap-5 px-1 pb-12 pt-[5.75rem] text-center min-[400px]:gap-6 min-[400px]:pt-24 sm:min-h-[460px] sm:gap-8 sm:px-0 sm:py-20 sm:pt-20 lg:min-h-[500px] lg:flex-row lg:justify-between lg:gap-14 lg:py-24 lg:pt-20 lg:text-left"
         >
           <div className="max-w-3xl capitalize">
             <h2 className={sectionTitleInvertedClass}>
