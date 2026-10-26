@@ -14,6 +14,11 @@ export const siteMedia = {
     heroCityscape: "/media/home/hero-cityscape.webp",
     commitmentFeature: "/media/home/commitment-feature.webp",
     edmontonCalgaryBackground: "/media/home/edmonton-calgary-background.webp",
+    /** Blog index hero — Go Coach Prevost (use distinct filename to avoid stale CDN/browser cache) */
+    blogHero: "/media/home/blog-hero-coach.webp",
+  },
+  blog: {
+    tenEventsCharterBusHero: "/media/blog/10-events-charter-bus-hero.png",
   },
   booking: {
     stepRequestQuote: "/media/booking/step-request-quote.webp",

@@ -240,12 +240,31 @@ body {
   animation-play-state: paused;
 }
 
+@keyframes blog-why-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-blog-why-progress {
+  animation: blog-why-progress var(--blog-why-duration, 5.5s) linear forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-trust-marquee,
   .animate-amenities-marquee,
   .animate-gallery-left,
   .animate-gallery-right {
     animation-play-state: paused;
+  }
+
+  .animate-blog-why-progress {
+    animation: none;
+    transform: scaleX(1);
   }
 }
 

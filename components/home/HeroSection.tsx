@@ -126,7 +126,7 @@ export function HeroSection() {
                   alt=""
                   width={50}
                   height={50}
-                  className="h-8 w-8 mt-3 mb-3 object-contain sm:h-8 sm:w-8"
+                  className="h-8 w-8  object-contain sm:h-7 sm:w-7"
                 />
                 Request a Quote
               </Link>

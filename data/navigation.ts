@@ -15,7 +15,7 @@ export const homeSections = {
   gallery: "/gallery",
   contact: "/contact",
   destinations: "/destinations",
-  blog: "/about",
+  blog: "/blog",
   aboutUs: "/about-us",
   policies: "/about-us",
 } as const;
@@ -36,7 +36,7 @@ export const mainNav: NavItem[] = [
   { label: "About Us", href: homeSections.commitment },
   { label: "Gallery", href: homeSections.services },
   { label: "Reviews", href: homeSections.reviews },
-  { label: "Blog", href: homeSections.commitment },
+  { label: "Blog", href: homeSections.blog },
   { label: "FAQ", href: homeSections.amenities },
 ];
 

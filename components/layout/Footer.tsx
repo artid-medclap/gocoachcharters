@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
 
-import { FinalCtaSection } from "@/components/home/FinalCtaSection";
+import { FooterCtaGate } from "@/components/layout/FooterCtaGate";
 import { Container } from "@/components/shared/Container";
 import { Logo } from "@/components/shared/Logo";
 import {
@@ -83,7 +83,7 @@ export function Footer() {
 
   return (
     <>
-      <FinalCtaSection />
+      <FooterCtaGate />
       <footer
         className={cn(
           "relative w-full border-t border-primary-100 text-foreground",
