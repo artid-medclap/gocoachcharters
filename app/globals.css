@@ -267,4 +267,24 @@ body {
     transform: scaleX(1);
   }
 }
+/* Home hero: portrait crop on small screens, wide lot photo from 768px up. */
+.home-hero img.for_web {
+  display: none;
+}
+
+.home-hero img.for_mobile {
+  display: block;
+  object-position: 50% 62%;
+}
+
+@media (min-width: 768px) {
+  .home-hero img.for_web {
+    display: block;
+    object-position: 82% 50%;
+  }
+
+  .home-hero img.for_mobile {
+    display: none;
+  }
+}
 

@@ -17,15 +17,22 @@ export function HeroSection() {
     <section
       id={heroSection.id}
       aria-label={heroSection.name}
-      className="relative isolate overflow-hidden bg-black min-h-[28rem] sm:min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]"
+      className="home-hero relative isolate overflow-hidden bg-black min-h-[28rem] sm:min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]"
     >
       <Image
         src={siteMedia.home.heroPrevostLot}
-        alt="Go Coach Charter Bus on Open Pavement"
+        alt="Go Coach charter bus on open pavement"
         fill
         priority
-        sizes="100vw"
-        className="object-cover object-[82%_50%]"
+        sizes="(min-width: 768px) 100vw, 0px"
+        className="for_web object-cover"
+      />
+      <Image
+        src={siteMedia.home.heroPrevostLotMobile}
+        alt="Go Coach charter bus facing the camera"
+        fill
+        sizes="(max-width: 767px) 100vw, 0px"
+        className="for_mobile object-cover"
       />
       <div
         className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(0,0,0,0.96)_0%,rgba(0,0,0,0.74)_32%,rgba(0,0,0,0.34)_50%,transparent_66%)]"
