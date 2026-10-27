@@ -11,7 +11,7 @@ export const siteMedia = {
     heroGoCoachBuses: "/media/home/go-coach-buses-webp.webp",
     /** Homepage hero — Go Coach Prevost on open pavement */
     heroPrevostLot: "/media/home/hero-bus.webp",
-    heroPrevostLotMobile: "/gallery/Go Coach Charter Bus Mobile.webp",
+    heroPrevostLotMobile: "/media/home/hero-bus-mobile.webp",
     heroFleetWide: "/media/home/hero-fleet-wide.webp",
     heroFleet: "/media/home/hero-fleet.webp",
     heroCityscape: "/media/home/hero-cityscape.webp",

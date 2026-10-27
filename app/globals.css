@@ -267,14 +267,40 @@ body {
     transform: scaleX(1);
   }
 }
-/* Home hero: portrait crop on small screens, wide lot photo from 768px up. */
+/* Home hero: same overlay layout at every width; mobile keeps the bus on the right. */
+.home-hero-media {
+  position: absolute;
+  inset: 0;
+}
+
 .home-hero img.for_web {
   display: none;
 }
 
 .home-hero img.for_mobile {
   display: block;
-  object-position: 50% 62%;
+  object-position: 78% 50%;
+}
+
+.home-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.96) 0%,
+    rgba(0, 0, 0, 0.74) 32%,
+    rgba(0, 0, 0, 0.34) 50%,
+    transparent 66%
+  );
+}
+
+@media (max-width: 767px) {
+  .home-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.62) 42%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+  }
 }
 
 @media (min-width: 768px) {

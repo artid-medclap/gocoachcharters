@@ -17,33 +17,35 @@ export function HeroSection() {
     <section
       id={heroSection.id}
       aria-label={heroSection.name}
-      className="home-hero relative isolate overflow-hidden bg-black min-h-[28rem] sm:min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]"
+      className="home-hero relative isolate overflow-hidden bg-black min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]"
     >
-      <Image
-        src={siteMedia.home.heroPrevostLot}
-        alt="Go Coach charter bus on open pavement"
-        fill
-        priority
-        sizes="(min-width: 768px) 100vw, 0px"
-        className="for_web object-cover"
-      />
-      <Image
-        src={siteMedia.home.heroPrevostLotMobile}
-        alt="Go Coach charter bus facing the camera"
-        fill
-        sizes="(max-width: 767px) 100vw, 0px"
-        className="for_mobile object-cover"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(0,0,0,0.96)_0%,rgba(0,0,0,0.74)_32%,rgba(0,0,0,0.34)_50%,transparent_66%)]"
-        aria-hidden
-      />
+      <div className="home-hero-media">
+        <Image
+          src={siteMedia.home.heroPrevostLot}
+          alt="Go Coach charter bus on open pavement"
+          fill
+          priority
+          sizes="(min-width: 768px) 100vw, 0px"
+          className="for_web object-cover"
+        />
+        <Image
+          src={siteMedia.home.heroPrevostLotMobile}
+          alt="Go Coach charter bus on open pavement"
+          fill
+          sizes="(max-width: 767px) 100vw, 0px"
+          className="for_mobile object-cover"
+        />
+        <div
+          className="home-hero-overlay pointer-events-none absolute inset-0 z-[1]"
+          aria-hidden
+        />
+      </div>
 
       <Container
         className={cn(
-          "relative z-10 flex flex-col justify-center",
-          "px-4 pt-[calc(5.5rem+env(safe-area-inset-top,0px))] pb-12 sm:pt-24 sm:pb-14",
-          "min-h-[28rem] sm:min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]",
+          "home-hero-copy relative z-10 flex flex-col justify-center",
+          "px-4 pt-[calc(5.5rem+env(safe-area-inset-top,0px))] pb-10 sm:pt-24 sm:pb-14",
+          "min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]",
         )}
       >
         <div className="flex w-full max-w-2xl flex-col items-start text-left">
