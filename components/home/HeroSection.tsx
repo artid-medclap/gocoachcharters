@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarCheck, ShieldCheck, UserRoundCheck, UsersRound } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/shared/Container";
 import { homeSections } from "@/data/navigation";
@@ -12,138 +12,68 @@ import { cn } from "@/lib/utils";
 
 export const heroSection = homeSectionMeta.hero;
 
-const assurances = [
-  { icon: CalendarCheck, lines: ["Serving Groups", "Since 2013"] },
-  { icon: ShieldCheck, lines: ["Licensed &", "Insured"] },
-  { icon: UserRoundCheck, lines: ["Professional", "Drivers"] },
-  { icon: UsersRound, lines: ["1000+ Groups", "Served"] },
-] as const;
-
-const assuranceIconClass =
-  "flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-primary-900 shadow-[0_4px_14px_rgba(122,1,31,0.12)] min-[400px]:h-10 min-[400px]:w-10 sm:h-[3.25rem] sm:w-[3.25rem]";
-
-const assuranceTextClass =
-  "text-left text-[0.75rem] font-semibold leading-[1.2] text-primary-950 min-[400px]:text-[0.8125rem] sm:text-sm sm:leading-[1.25]";
-
-// function HeroTrustBar({ className }: { className?: string }) {
-//   return (
-//     <div
-//       className={cn(
-//         "overflow-hidden rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem]",
-//         heroTrustBarSurfaceClass,
-//         className
-//       )}
-//       role="list"
-//       aria-label="Why book with Go Coach"
-//     >
-//       <div
-//         className="grid grid-cols-2 divide-x divide-y divide-primary-200/70 lg:grid-cols-4 lg:divide-y-0"
-//       >
-//         {assurances.map(({ icon: Icon, lines }) => (
-//           <div
-//             key={lines.join(" ")}
-//             role="listitem"
-//             className="flex items-center justify-center gap-1.5 px-2 py-3 min-[400px]:gap-2 min-[400px]:px-3 min-[400px]:py-3.5 sm:gap-3 sm:px-5 sm:py-5 lg:gap-3.5 lg:px-6 lg:py-6"
-//           >
-//             <div className={assuranceIconClass}>
-//               <Icon
-//                 className="h-[1.15rem] w-[1.15rem] text-primary-900 min-[400px]:h-[1.35rem] min-[400px]:w-[1.35rem] sm:h-6 sm:w-6"
-//                 strokeWidth={2.35}
-//                 aria-hidden
-//               />
-//             </div>
-//             <p className={`${assuranceTextClass} min-w-0`}>
-//               {lines.map((line) => (
-//                 <span key={line} className="block">
-//                   {line}
-//                 </span>
-//               ))}
-//             </p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 export function HeroSection() {
   return (
     <section
       id={heroSection.id}
       aria-label={heroSection.name}
-      className="relative isolate overflow-hidden lg:min-h-[min(92vh,880px)]"
+      className="relative isolate overflow-hidden bg-black min-h-[28rem] sm:min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]"
     >
       <Image
-        src={siteMedia.home.heroGoCoachBuses}
-        alt="Go Coach Charters fleet of motorcoaches parked on an open lot"
+        src={siteMedia.home.heroPrevostLot}
+        alt="Go Coach Charter Bus on Open Pavement"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-[82%_50%]"
       />
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-[rgba(0,0,0,0.49)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(0,0,0,0.96)_0%,rgba(0,0,0,0.74)_32%,rgba(0,0,0,0.34)_50%,transparent_66%)]"
         aria-hidden
       />
 
-
-   
-<Container
-  className={cn(
-    "relative z-10 flex flex-col items-center",
-    "px-4 pt-[calc(6.5rem+env(safe-area-inset-top,0px))] pb-10 sm:pt-28 sm:pb-12",
-    "lg:min-h-[min(92vh,880px)] lg:justify-center lg:pb-28 lg:pt-24 xl:pb-32"
-  )}
->
-
-
-        <div
-          className={cn(
-            "flex w-full max-w-6xl flex-col items-center text-center lg:px-6 xl:px-10"
-          )}
-        >
-          <div className="flex w-full flex-col items-center gap-5 sm:gap-7 lg:gap-10 xl:gap-12">
-            <h1
+      <Container
+        className={cn(
+          "relative z-10 flex flex-col justify-center",
+          "px-4 pt-[calc(5.5rem+env(safe-area-inset-top,0px))] pb-12 sm:pt-24 sm:pb-14",
+          "min-h-[28rem] sm:min-h-[32rem] lg:min-h-[36rem] xl:min-h-[38rem]",
+        )}
+      >
+        <div className="flex w-full max-w-2xl flex-col items-start text-left">
+          <h1 className="w-full text-left">
+            <span className="block text-lg font-medium tracking-[0.02em] text-white/90 sm:text-xl md:text-2xl">
+              Travel With Go Coach Charters
+            </span>
+            <span
               className={cn(
-                "mx-auto flex w-full max-w-6xl flex-col items-center gap-3 text-center sm:gap-5 lg:gap-6",
-                heroTitleClass
+                heroTitleClass,
+                "mt-3 block text-left [text-wrap:wrap] sm:mt-4",
               )}
             >
-              <span>Charter Bus Rental</span>
-              <span className="text-white">Across Alberta</span>
-            </h1>
+              Group Travel, Made Easy.
+            </span>
+          </h1>
 
-            <div className="flex w-full justify-center">
-              <Link
-                href={homeSections.getStarted}
-                className={cn(
-                  "group min-h-12 w-full max-w-[280px] gap-2 px-5 py-3 text-sm sm:max-w-xs sm:gap-3 sm:px-6 lg:w-auto lg:max-w-none",
-                  primaryButtonClass
-                )}
-              >
-                <Image
-                  src={siteMedia.brand.busIconWhite}
-                  alt=""
-                  width={50}
-                  height={50}
-                  className="h-8 w-8  object-contain sm:h-7 sm:w-7"
-                />
-                Request a Quote
-              </Link>
-            </div>
-          </div>
+          <p className="mt-5 w-full max-w-xl text-left text-sm leading-6 text-white/85 sm:mt-6 sm:text-base sm:leading-7">
+            From corporate events and school trips to weddings and group adventures, Go Coach
+            Charters makes group transportation simple. Let us help you get where you need to go.
+          </p>
 
-          {/* <HeroTrustBar className="mt-6 w-full sm:mt-8 lg:hidden" /> */}
+          <Link
+            href={homeSections.getStarted}
+            className={cn(
+              "group mt-7 self-start min-h-11 px-6 py-2.5 text-sm sm:mt-8 sm:min-h-12 sm:px-7",
+              primaryButtonClass,
+            )}
+          >
+            Request a Quote
+            <ArrowRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden
+            />
+          </Link>
         </div>
       </Container>
-
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden px-4 pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] lg:block lg:px-6"
-      >
-        {/* <Container className="pointer-events-auto max-w-6xl px-0"> */}
-        {/* <HeroTrustBar /> */}
-        {/* </Container> */}
-      </div>
     </section>
   );
 }

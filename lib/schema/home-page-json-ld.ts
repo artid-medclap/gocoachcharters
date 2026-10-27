@@ -149,7 +149,7 @@ export function getHomePageJsonLd() {
         about: { "@id": ORG_ID },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          url: absoluteUrl(siteMedia.home.heroGoCoachBuses),
+          url: absoluteUrl(siteMedia.home.heroPrevostLot),
         },
         inLanguage: "en-CA",
       },

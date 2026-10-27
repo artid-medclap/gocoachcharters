@@ -9,6 +9,8 @@ export const siteMedia = {
   },
   home: {
     heroGoCoachBuses: "/media/home/go-coach-buses-webp.webp",
+    /** Homepage hero — Go Coach charter bus on open pavement */
+    heroPrevostLot: "/media/home/hero-open-pavement.webp",
     heroFleetWide: "/media/home/hero-fleet-wide.webp",
     heroFleet: "/media/home/hero-fleet.webp",
     heroCityscape: "/media/home/hero-cityscape.webp",
@@ -38,6 +40,16 @@ export const siteMedia = {
     motorCoach: "/media/fleet/full_size_coach.webp",
     miniCoach: "/media/fleet/mini-coach.webp",
     fordTransit: "/media/fleet/ford-transit.webp",
+    interiorSeats: "/media/gallery/image (4).webp",
+    seatOutlet: "/media/fleet/coach-seat-outlet.webp",
+    seatsAisle: "/gallery/IMG_5841.webp",
+    seatsAisleAlt: "/gallery/IMG_5718-HDR.webp",
+    seatsClose: "/gallery/IMG_5850.webp",
+    seatsCupHolder: "/gallery/IMG_5868.webp",
+    seatsTable: "/gallery/IMG_5793.webp",
+    restroom: "/gallery/IMG_5772.webp",
+    restroomAlt: "/gallery/IMG_5889.webp",
+    miniCabin: "/gallery/IMG_5967.webp",
   },
   services: {
     charterCoach: "/media/services/charter-coach.webp",
