@@ -49,8 +49,8 @@ export const fleet: FleetVehicle[] = [
         alt: "Onboard restroom on the large coach",
       },
       {
-        src: siteMedia.fleet.seatOutlet,
-        alt: "110 power outlet at a passenger seat",
+        src: siteMedia.fleet.coachEntry,
+        alt: "Large coach driver area and passenger entry",
       },
     ],
   },
@@ -90,15 +90,15 @@ export const fleet: FleetVehicle[] = [
     gallery: [
       {
         src: siteMedia.fleet.seatsClose,
-        alt: "Mini bus reclining passenger seats",
-      },
-      {
-        src: siteMedia.fleet.seatsTable,
-        alt: "Mini bus seats with table and cup holder",
+        alt: "Mini bus reclining leather seats",
       },
       {
         src: siteMedia.fleet.miniCabin,
         alt: "Mini bus cabin seating",
+      },
+      {
+        src: siteMedia.fleet.miniDoor,
+        alt: "Go Coach driver beside the mini bus",
       },
     ],
   },
